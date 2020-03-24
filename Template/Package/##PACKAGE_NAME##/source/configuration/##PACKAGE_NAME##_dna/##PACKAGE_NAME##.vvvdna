@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VVV_Vivid>
+  <Name>##PACKAGE_NAME##</Name>
+  <Demiurg>
+    <OrganelleModules>
+      <Module>##PACKAGE_NAME##.vvvorg</Module>
+    </OrganelleModules>
+    <Synthesis>
+    </Synthesis>
+  </Demiurg>
+</VVV_Vivid>

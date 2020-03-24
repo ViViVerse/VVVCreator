@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <VVV_ViViVerseDir>$(SolutionDir)..\..\..\</VVV_ViViVerseDir>
+    <VVV_ThisProjectDir>$(SolutionDir)</VVV_ThisProjectDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="VVV_ViViVerseDir">
+      <Value>$(VVV_ViViVerseDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="VVV_ThisProjectDir">
+      <Value>$(VVV_ThisProjectDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collection", "Collection", "##LNX_COLL_GUID##"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "##LNX_CFG_GUID##"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Organelle", "Organelle", "##LNX_ORG_GUID##"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "##LNX_COMN_GUID##"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module", "Module", "##LNX_MOD_GUID##"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_symbiosis_l", "source\organelle\common\##PACKAGE_NAME##_symbiosis\##PACKAGE_NAME##_symbiosis_l.vcxproj", "##LNX_SYM_PROJECT_GUID##"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_l", "source\organelle\collection\##PACKAGE_NAME##\##PACKAGE_NAME##_l.vcxproj", "##LNX_COLL_PROJECT_GUID##"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_l", "source\organelle\module\##PACKAGE_NAME##\##PACKAGE_NAME##_l.vcxproj", "##LNX_MOD_PROJECT_GUID##"
+	ProjectSection(ProjectDependencies) = postProject
+		##LNX_SYM_PROJECT_GUID## = ##LNX_SYM_PROJECT_GUID##
+		##LNX_COLL_PROJECT_GUID## = ##LNX_COLL_PROJECT_GUID##
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_message_l", "source\organelle\common\##PACKAGE_NAME##_message\##PACKAGE_NAME##_message_l.vcxproj", "##LNX_MSG_PROJECT_GUID##"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_dna_l", "source\configuration\##PACKAGE_NAME##_dna\##PACKAGE_NAME##_dna_l.vcxproj", "##LNX_CFG_PROJECT_GUID##"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		##LNX_SYM_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##LNX_SYM_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##LNX_SYM_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##LNX_SYM_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##LNX_SYM_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##LNX_SYM_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##LNX_SYM_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##LNX_SYM_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+		##LNX_COLL_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##LNX_COLL_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##LNX_COLL_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##LNX_COLL_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##LNX_COLL_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##LNX_COLL_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##LNX_COLL_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##LNX_COLL_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+		##LNX_MOD_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##LNX_MOD_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##LNX_MOD_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##LNX_MOD_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##LNX_MOD_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##LNX_MOD_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##LNX_MOD_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##LNX_MOD_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+		##LNX_MSG_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##LNX_MSG_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##LNX_MSG_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##LNX_MSG_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##LNX_MSG_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##LNX_MSG_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##LNX_MSG_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##LNX_MSG_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+		##LNX_CFG_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##LNX_CFG_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##LNX_CFG_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##LNX_CFG_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##LNX_CFG_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##LNX_CFG_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##LNX_CFG_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##LNX_CFG_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		##LNX_COLL_GUID## = ##LNX_ORG_GUID##
+		##LNX_COMN_GUID## = ##LNX_ORG_GUID##
+		##LNX_MOD_GUID## = ##LNX_ORG_GUID##
+		##LNX_SYM_PROJECT_GUID## = ##LNX_COMN_GUID##
+		##LNX_COLL_PROJECT_GUID## = ##LNX_COLL_GUID##
+		##LNX_MOD_PROJECT_GUID## = ##LNX_MOD_GUID##
+		##LNX_MSG_PROJECT_GUID## = ##LNX_COMN_GUID##
+		##LNX_CFG_PROJECT_GUID## = ##LNX_CFG_GUID##
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = ##GUID##
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+# Exclude build artefacts
+.vs
+**/w32
+**/x64
+**/arm
+**/linux/x64
+**/intermediate
+**/Release
+**/Debug
+**/internal
+runtime/quality
+/framework/source/host/vvv_universal/Generated Files
+**/obj
+**/ipch
+*.o
+*.suo
+*.ncb
+*.user
+*.vspscc
+*.vssscc
+*.tlog
+*.so
+*.log
+*.ilk
+*.iobj
+*.ipdb
+*.pdb
+*.dll
+*.FileListAbsolute.txt
+

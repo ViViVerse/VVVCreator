@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collection", "Collection", "##WIN_COLL_GUID##"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "##WIN_COMN_GUID##"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module", "Module", "##WIN_MOD_GUID##"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##", "source\organelle\collection\##PACKAGE_NAME##\##PACKAGE_NAME##.vcxproj", "##WIN_COLL_PROJECT_GUID##"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_message", "source\organelle\common\##PACKAGE_NAME##_message\##PACKAGE_NAME##_message.vcxproj", "##WIN_MSG_PROJECT_GUID##"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_symbiosis", "source\organelle\common\##PACKAGE_NAME##_symbiosis\##PACKAGE_NAME##_symbiosis.vcxproj", "##WIN_SYM_PROJECT_GUID##"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##", "source\organelle\module\##PACKAGE_NAME##\##PACKAGE_NAME##.vcxproj", "##WIN_MOD_PROJECT_GUID##"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "##WIN_CFG_GUID##"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Organelle", "Organelle", "##WIN_ORG_GUID##"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_dna", "source\configuration\##PACKAGE_NAME##_dna\##PACKAGE_NAME##_dna.vcxproj", "##WIN_CFG_PROJECT_GUID##"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|ARM = Release|ARM
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		##WIN_COLL_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##WIN_COLL_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##WIN_COLL_PROJECT_GUID##.Debug|Win32.ActiveCfg = Debug|Win32
+		##WIN_COLL_PROJECT_GUID##.Debug|Win32.Build.0 = Debug|Win32
+		##WIN_COLL_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##WIN_COLL_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##WIN_COLL_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##WIN_COLL_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##WIN_COLL_PROJECT_GUID##.Release|Win32.ActiveCfg = Release|Win32
+		##WIN_COLL_PROJECT_GUID##.Release|Win32.Build.0 = Release|Win32
+		##WIN_COLL_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##WIN_COLL_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+		##WIN_MSG_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##WIN_MSG_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##WIN_MSG_PROJECT_GUID##.Debug|Win32.ActiveCfg = Debug|Win32
+		##WIN_MSG_PROJECT_GUID##.Debug|Win32.Build.0 = Debug|Win32
+		##WIN_MSG_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##WIN_MSG_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##WIN_MSG_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##WIN_MSG_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##WIN_MSG_PROJECT_GUID##.Release|Win32.ActiveCfg = Release|Win32
+		##WIN_MSG_PROJECT_GUID##.Release|Win32.Build.0 = Release|Win32
+		##WIN_MSG_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##WIN_MSG_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+		##WIN_SYM_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##WIN_SYM_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##WIN_SYM_PROJECT_GUID##.Debug|Win32.ActiveCfg = Debug|Win32
+		##WIN_SYM_PROJECT_GUID##.Debug|Win32.Build.0 = Debug|Win32
+		##WIN_SYM_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##WIN_SYM_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##WIN_SYM_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##WIN_SYM_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##WIN_SYM_PROJECT_GUID##.Release|Win32.ActiveCfg = Release|Win32
+		##WIN_SYM_PROJECT_GUID##.Release|Win32.Build.0 = Release|Win32
+		##WIN_SYM_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##WIN_SYM_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+		##WIN_MOD_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##WIN_MOD_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##WIN_MOD_PROJECT_GUID##.Debug|Win32.ActiveCfg = Debug|Win32
+		##WIN_MOD_PROJECT_GUID##.Debug|Win32.Build.0 = Debug|Win32
+		##WIN_MOD_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##WIN_MOD_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##WIN_MOD_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##WIN_MOD_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##WIN_MOD_PROJECT_GUID##.Release|Win32.ActiveCfg = Release|Win32
+		##WIN_MOD_PROJECT_GUID##.Release|Win32.Build.0 = Release|Win32
+		##WIN_MOD_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##WIN_MOD_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+		##WIN_CFG_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|Win32
+		##WIN_CFG_PROJECT_GUID##.Debug|Win32.ActiveCfg = Debug|Win32
+		##WIN_CFG_PROJECT_GUID##.Debug|Win32.Build.0 = Debug|Win32
+		##WIN_CFG_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##WIN_CFG_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##WIN_CFG_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|Win32
+		##WIN_CFG_PROJECT_GUID##.Release|Win32.ActiveCfg = Release|Win32
+		##WIN_CFG_PROJECT_GUID##.Release|Win32.Build.0 = Release|Win32
+		##WIN_CFG_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##WIN_CFG_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		##WIN_COLL_GUID## = ##WIN_ORG_GUID##
+		##WIN_COMN_GUID## = ##WIN_ORG_GUID##
+		##WIN_MOD_GUID## = ##WIN_ORG_GUID##
+		##WIN_COLL_PROJECT_GUID## = ##WIN_COLL_GUID##
+		##WIN_MSG_PROJECT_GUID## = ##WIN_COMN_GUID##
+		##WIN_SYM_PROJECT_GUID## = ##WIN_COMN_GUID##
+		##WIN_MOD_PROJECT_GUID## = ##WIN_MOD_GUID##
+		##WIN_CFG_PROJECT_GUID## = ##WIN_CFG_GUID##
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = ##GUID##
+	EndGlobalSection
+EndGlobal

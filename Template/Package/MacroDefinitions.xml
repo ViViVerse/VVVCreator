@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MacroDefinitions>
+  <MacroDefinition>
+    <Name>PACKAGE_NAME</Name>
+    <Type>UserString</Type>
+    <Description>The name of the package. Must not contain whitespace.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>UND_PACKAGE_NAME</Name>
+    <Type>UserString</Type>
+    <Description>The name of the package without prefix like 'vvv_'. Must not contain whitespace.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>COPYRIGHT</Name>
+    <Type>UserString</Type>
+    <Description>The copyright string for the file headers.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>COMPANY</Name>
+    <Type>UserString</Type>
+    <Description>The company name (for the file information on Windows).</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>MOD_PROD_NAME</Name>
+    <Type>UserString</Type>
+    <Description>The name of the module as product (for the file information on Windows).</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>CREATION_DATE</Name>
+    <Type>SysDate</Type>
+    <Description>The date of the creation of the package.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_ORG_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package organelle folder used in the Windows sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_CFG_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package configuration folder used in the Windows sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_CFG_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package configuration project used in the Windows vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_COLL_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package organelle collection folder used in the Windows sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_COLL_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package collection project used in the Windows vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_COMN_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package organelle common folder used in the Windows sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_MSG_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package message project used in the Windows vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_SYM_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package symbiosis project used in the Windows vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_MOD_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package module folder used in the Windows sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>WIN_MOD_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package module project used in the Windows vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_ORG_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package organelle folder used in the Linux sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_CFG_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package configuration folder used in the Linux sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_CFG_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package configuration project used in the Linux vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_COLL_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package organelle collection folder used in the Linux sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_COLL_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package collection project used in the Linux vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_COMN_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package organelle common folder used in the Linux sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_MSG_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package message project used in the Linux vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_SYM_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package symbiosis project used in the Linux vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_MOD_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package module folder used in the Linux sln file of msbuild.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>LNX_MOD_PROJECT_GUID</Name>
+    <Type>SysGuid</Type>
+    <Description>The id of the package module project used in the Linux vcxproj and sln files of msbuild.</Description>
+  </MacroDefinition>
+</MacroDefinitions>
