@@ -6,28 +6,24 @@ using System.Xml;
 namespace VVVCreator
 {
     /// <summary>
-    /// Enumerates the available macro types.
-    /// Four special macros exist which are not enumerated here:
-    /// GUID, CODE_GUID, DATE, YEAR. These represent non-referable one time values.
-    /// The are substituted as follows:
-    /// GUID: a new guid in the format {00000000-0000-0000-0000-000000000000}
-    /// CODE_GUID: a new guid in the format 00000000, 0000, 0000, 0000, 000000000000
-    /// DATE: the current date in the format yyyy-MM-dd
-    /// YEAR: the current year in the format yyyy
+    /// Enumerates the available macro types.<br />
+    /// Four special macros exist which are not enumerated here:<br />
+    /// GUID, CODE_GUID, DATE, YEAR. These represent non-referable one time values.<br />
+    /// They are substituted as follows:<br />
+    /// GUID: a new guid in the format {00000000-0000-0000-0000-000000000000}<br />
+    /// CODE_GUID: a new guid in the format 00000000, 0000, 0000, 0000, 000000000000<br />
+    /// DATE: the current date in the format yyyy-MM-dd<br />
+    /// YEAR: the current year in the format yyyy<br />
     /// </summary>
     public enum MacroType
     {
-        /// <summary>
-        /// The current date in the format yyyy-MM-dd.
-        /// </summary>
+        /// <summary>The current date in the format yyyy-MM-dd.</summary>
         SysDate,
-        /// <summary>
-        /// A new guid in the format {00000000-0000-0000-0000-000000000000}.
-        /// </summary>
+        /// <summary>A new guid in the format {00000000-0000-0000-0000-000000000000}.</summary>
         SysGuid,
-        /// <summary>
-        // A string which has to be provided by the user.
-        /// </summary>
+        /// <summary>A new guid in the format 00000000, 0000, 0000, 0000, 000000000000.</summary>
+        SysCodeGuid,
+        /// <summary>A string which has to be provided by the user.</summary>
         UserString
     } // enum MacroType
 
@@ -45,12 +41,12 @@ namespace VVVCreator
         public MacroType Type;
 
         /// <summary>
-        /// 
+        /// A descriptive text which shall make it easier for the user to provide the correct value for the macro.
         /// </summary>
         public string Description;
 
         /// <summary>
-        /// The descrption of the macro.
+        /// The value of the macro. The macro entry in the template will be replaced by this text.
         /// </summary>
         public string Value;
 
@@ -60,13 +56,14 @@ namespace VVVCreator
         /// </summary>
         /// <param name="name">The name of the macro.</param>
         /// <param name="type">The type of the macro.</param>
-        /// <param name="description">The descrption of the macro.</param>
-        public MacroDefinition(string name, MacroType type, string description)
+        /// <param name="description">The description of the macro.</param>
+        /// <param name="defaultValue">An optional default value.</param>
+        public MacroDefinition(string name, MacroType type, string description, string defaultValue)
         {
             Name = name;
             Type = type;
-            Value = "";
             Description = description;
+            Value = defaultValue == null ? "" : defaultValue;
         } // MacroDefinition
 
 
@@ -95,9 +92,11 @@ namespace VVVCreator
                 string macroName = macroNode["Name"].InnerText;
                 MacroType macroType = (MacroType)Enum.Parse< MacroType>(macroNode["Type"].InnerText);
                 string macroDescription = macroNode["Description"].InnerText;
+                XmlElement defaultValueElement = macroNode["DefaultValue"];
+                string macroDefaultValue = defaultValueElement == null ? null : defaultValueElement.InnerText;
 
                 // Create a new macro data entry.
-                MacroDefinition macroDefinition = new MacroDefinition(macroName, macroType, macroDescription);
+                MacroDefinition macroDefinition = new MacroDefinition(macroName, macroType, macroDescription, macroDefaultValue);
 
                 // Add the new macro data entry to our list.
                 macroDefinitions.Add(macroDefinition);
@@ -115,10 +114,13 @@ namespace VVVCreator
             switch(Type)
             {
                 case MacroType.SysDate:
-                    Value = System.DateTime.Now.ToString("yyyy-MM-dd");
+                    Value = DateTime.Now.ToString("yyyy-MM-dd");
                     break;
                 case MacroType.SysGuid:
-                    Value = System.Guid.NewGuid().ToString("B");
+                    Value = Guid.NewGuid().ToString("B");
+                    break;
+                case MacroType.SysCodeGuid:
+                    Value = Guid.NewGuid().ToString("D").Replace("-", ", ").ToUpper();
                     break;
             }
         } // SetSystemMacroValue

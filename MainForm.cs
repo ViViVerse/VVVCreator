@@ -73,7 +73,7 @@ namespace VVVCreator
             }
 
             // Fill the macros list view with the macro definitions
-            fillMacrosListView();
+            //fillMacrosListView();
         } // mainForm_Load
 
 
@@ -299,9 +299,10 @@ namespace VVVCreator
 
             // Create the target.
             string templatePath = Path.Combine("Template", TemplateName);
+            string templateContentPath = Path.Combine(templatePath, "Content");
             try
             {
-                TargetCreator.CreateTarget(templatePath, ref MacroDefinitions, dlg.SelectedPath);
+                TargetCreator.CreateTarget(templateContentPath, ref MacroDefinitions, dlg.SelectedPath);
             }
             catch (Exception ex)
             {
@@ -309,13 +310,23 @@ namespace VVVCreator
                 return;
             }
 
-            // If it exists, display the contents of the WhatToDoNext.txt file in the template folder.
+            // If one of them exists, display the contents of the WhatToDoNext.html or WhatToDoNext.txt file in the template folder.
             // Otherwise, display a general success message.
-            string msgFileSpec = Path.Combine(templatePath, "WhatToDoNext.txt");
-            if (File.Exists(msgFileSpec))
-                MessageBox.Show(System.IO.File.ReadAllText(msgFileSpec));
+            FileInfo htmlMsgFileInfo = new FileInfo(Path.Combine(templatePath, "WhatToDoNext.html"));
+            string txtMsgFileSpec = Path.Combine(templatePath, "WhatToDoNext.txt");
+            if (File.Exists(htmlMsgFileInfo.FullName))
+            {
+                FormattedMessageBox msgBox = new FormattedMessageBox(htmlMsgFileInfo.FullName);
+                msgBox.Show();
+            }
+            else if (File.Exists(txtMsgFileSpec))
+            {
+                MessageBox.Show(System.IO.File.ReadAllText(txtMsgFileSpec));
+            }
             else
+            {
                 MessageBox.Show("Target successfully created!", "Congratulation!");
+            }
         } // buttonCreateTarget_Click
 
 

@@ -5,6 +5,9 @@
     <Compile Update="EditMacroDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormattedMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
