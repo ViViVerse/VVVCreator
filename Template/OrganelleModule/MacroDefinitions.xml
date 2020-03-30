@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MacroDefinitions>
+  <MacroDefinition>
+    <Name>PACKAGE_NAME</Name>
+    <Type>UserString</Type>
+    <Description>The name of the package which contains the organelle module. Must not contain whitespace.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>MODULE_NAME</Name>
+    <Type>UserString</Type>
+    <Description>The name of the organelle module. Must not contain whitespace.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>COPYRIGHT</Name>
+    <Type>UserString</Type>
+    <Description>The copyright string for the file headers.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>COMPANY</Name>
+    <Type>UserString</Type>
+    <Description>The company name (for the file information on Windows).</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>MOD_PROD_NAME</Name>
+    <Type>UserString</Type>
+    <Description>The name of the module as product (for the file information on Windows).</Description>
+  </MacroDefinition>
+</MacroDefinitions>

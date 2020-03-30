@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>##LNX_MOD_PROJECT_GUID##</ProjectGuid>
+    <ProjectGuid>##GUID##</ProjectGuid>
     <Keyword>Linux</Keyword>
-    <RootNamespace>##PACKAGE_NAME##_l</RootNamespace>
+    <RootNamespace>##MODULE_NAME##_l</RootNamespace>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <ApplicationType>Linux</ApplicationType>
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
@@ -33,7 +33,7 @@
     <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Label="UserMacros">
-    <VVV_PackageName>##PACKAGE_NAME##</VVV_PackageName>
+    <VVV_PackageName>##MODULE_NAME##</VVV_PackageName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <Import Project="$(SolutionDir)source\property\vvv_location_linux.props" />
@@ -63,14 +63,14 @@
     <ClInclude Include="header\pch.h"/>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\##PACKAGE_NAME##.cpp"/>
+    <ClCompile Include="source\##MODULE_NAME##.cpp"/>
   </ItemGroup>
   <ItemDefinitionGroup>
     <Link>
       <LibraryDependencies>pthread;dl;ssl;crypto;uuid;##PACKAGE_NAME##_l;##PACKAGE_NAME##_symbiosis_l;vvv_protein_l;vvv_essence_l;vvv_core_symbiosis_l;vvv_quanta_l</LibraryDependencies>
     </Link>
     <RemotePostBuildEvent>
-      <Command>cp $(RemoteTargetPath) $(VVV_RemoteBinaryDir)/$(VVV_RemoteBuildPlatformDir)/$(VVV_RemoteBuildConfigDir)/##PACKAGE_NAME##.vvvorg</Command>
+      <Command>cp $(RemoteTargetPath) $(VVV_RemoteBinaryDir)/$(VVV_RemoteBuildPlatformDir)/$(VVV_RemoteBuildConfigDir)/##MODULE_NAME##.vvvorg</Command>
     </RemotePostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
