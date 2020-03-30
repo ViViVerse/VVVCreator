@@ -4,8 +4,8 @@ This is a .NET GUI utility which lets you create ViViVerse artefacts from templa
 
 These are the available templates:
 
-  1) ViViVerse Packages
-     An empty package.
++ Package<br />An empty package.
++ OrganelleModule<br />An empty organelle module.
 
 Building the tool:
 VVVCreator can be built with Visual Studio 2019 or Visual Studio Code with the C# extension installed.
