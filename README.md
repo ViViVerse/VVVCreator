@@ -66,7 +66,7 @@ These are the existing modifiers:
 
 ### Conditional macros
 
-The use of macros can be used by the values of other macros:
+The use of macros can be controlled by the values of other macros:
 
 \#\#USE_NAME?NAME\#\#
 
