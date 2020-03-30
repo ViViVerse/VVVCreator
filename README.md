@@ -16,10 +16,8 @@ When creating a template, you have to provide **meta information** and **templat
 
 The meta information consists of two files:
 
-<ul>
-  <li>MacroDefinitions.xml: Contains a list of the macros (s.b.) used in the template files, with descripotions and default values.</li>
-  <li>WhatToDoNext.html: Contains the text which is displayed to the user after the target has been successfully created.</li>
-</ul>
++ MacroDefinitions.xml<br />Contains a list of the macros (s.b.) used in the template files, with descripotions and default values.
++ WhatToDoNext.html<br />Contains the text which is displayed to the user after the target has been successfully created.
 
 The template files reside in a folder called _Content_. The files and subfolders in this folder are copied to the target folder.
 
@@ -40,7 +38,7 @@ The macro type needs to be defined in the macro definitions.
 + SysCodeGuid<br />A new guid in the format 00000000, 0000, 0000, 0000, 000000000000.
 + UserString<br />A string which has to be provided by the user.
 
-Only macros of type _UserString_ can be edited in the tool.
+Only macro values of type _UserString_ can be edited in the tool, all others are set automatically by the system.
 
 ### Predefined macros
 
@@ -57,7 +55,7 @@ Modifiers can be applied to macro values. A modifier appears in the macro entry 
 
 \#\#uc(PACKAGE_NAME\#\#
 
-That's right: no closing parenthesis!
+That's right: no closing parenthesis!<br/>
 These are the existing modifiers:
 
 + uc<br />Convert the entire macro value to uppercase.
@@ -79,7 +77,7 @@ Conditions and modifiers can be used together in one macro entry, with the condi
 
 \#\#USE_NAME?uc(NAME\#\#
 
-For file and folder names the '?' cannot be used. For those use '¿', which can be entered by using ALT + 168 (on the number block).
+For file and folder names, the '?' cannot be used. For those use '¿', which can be entered by using ALT + 168 (on the number block).
 The use of entire folders and files can be controlled with a conditional macro entry without macro name:
 
 \#\#USE_FILE¿\#\#
@@ -88,4 +86,4 @@ In this example, the entire file or folder is only created in the target if USE_
 
 ## Examples
 
-For further examples please see the existing templates.
+For further examples, please see the existing templates.
