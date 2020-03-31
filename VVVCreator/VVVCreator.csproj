@@ -4,10 +4,12 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>VVVCreator.Program</StartupObject>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy Template $(TargetDir)Template /Y /D /E /I /Q" />
-  </Target>
+  <ItemGroup>
+    <ProjectReference Include="..\TargetCreation\TargetCreation.csproj" />
+  </ItemGroup>
 
 </Project>

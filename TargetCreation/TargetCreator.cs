@@ -4,9 +4,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
 
-namespace VVVCreator
+namespace TargetCreation
 {
-    class TargetCreator
+    public class TargetCreator
     {
         /// <summary>
         /// The modifications which can be applied to macro values.
@@ -384,5 +384,5 @@ namespace VVVCreator
 
             return outText.ToString();
         } // toUnderscore
-    } // class TargetCreator
+    } // class TargetCreation
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace VVVCreator
+namespace TargetCreation
 {
     /// <summary>
     /// Holds the data of user macros for package creation. Non-user macros are assigned values by the software on the fly and is not persisted.
     /// </summary>
-    class MacroData
+    public class MacroData
     {
         /// <summary>
         /// The name of the macro as in the macro definition.
@@ -102,4 +102,4 @@ namespace VVVCreator
             writer.Close();
         } // WriteToXml
     } // class MacroData
-} // namespace VVVCreator
+} // namespace TargetCreation

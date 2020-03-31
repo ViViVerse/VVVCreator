@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace VVVCreator
+namespace TargetCreation
 {
     /// <summary>
     /// Enumerates the available macro types.<br />
@@ -28,7 +28,7 @@ namespace VVVCreator
     } // enum MacroType
 
 
-    class MacroDefinition
+    public class MacroDefinition
     {
         /// <summary>
         /// The name of the macro.
@@ -125,4 +125,4 @@ namespace VVVCreator
             }
         } // SetSystemMacroValue
     } // class MacroDefinition
-} // namespace VVVCreator
+} // namespace TargetCreation

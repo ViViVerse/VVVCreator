@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "VVVCreatorConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "Package \"vvv_test.xml\" \"C:\\ViViVerse\\software\\package\""
+    }
+  }
+}
