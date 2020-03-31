@@ -1,14 +1,14 @@
 # Overview
 
-This is a .NET GUI utility which lets you create ViViVerse artefacts from templates.
+This provides a .NET GUI utility (VVVCreator) and a command line utility (VVVCreatorConsole) which let you create ViViVerse artefacts from templates.
 
-These are the available templates:
+The available templates are:
 
 + Package<br />An empty package.
 + OrganelleModule<br />An empty organelle module.
 
-Building the tool:
-VVVCreator can be built with Visual Studio 2019 or Visual Studio Code with the C# extension installed.
+Building the tools:
+VVVCreator(Console) can be built with Visual Studio 2019 or Visual Studio Code with the C# extension installed.
 
 # Creating templates
 
