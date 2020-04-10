@@ -1,0 +1,6 @@
+# Exclude build artefacts
+.vs
+.vscode
+**/bin
+**/obj
+
