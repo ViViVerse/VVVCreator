@@ -46,7 +46,7 @@ set_target_properties(
 
 
 target_include_directories(##PACKAGE_NAME##_symbiosis PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../common/include)
-target_include_directories(##PACKAGE_NAME##_symbiosis PRIVATE ${VVV_PackageDir}/vvv_base/source/organelle/common/include)
+#target_include_directories(##PACKAGE_NAME## PRIVATE ${VVV_PackageDir}/vvv_???other package/source/organelle/common/include)
 
 
 

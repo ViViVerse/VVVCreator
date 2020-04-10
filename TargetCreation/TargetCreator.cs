@@ -38,6 +38,9 @@ namespace TargetCreation
             foreach (MacroDefinition macroDef in macroDefinitions)
                 macroDictionary.Add(macroDef.Name, macroDef.Value);
 
+            //string t = "abc\r\n##INS?##\r\ndef\r\n##INS?##123##}##ghi\r\n##}##\r\n##INS?KLM####INS?##XYZ##}##\r\n";
+            //string st = If.ApplyIfs(t, macroDictionary);
+
             // Copy the entire template folder to the target folder.
             // While doing this, substitute the macros in folder and file specs and the file contents.
             copyAndProcessFilesRecursively(new DirectoryInfo(templateFolder), new DirectoryInfo(targetFolder), macroDictionary);
@@ -67,6 +70,7 @@ namespace TargetCreation
             } // foreach (DirectoryInfo dir
 
             // Process files: copy the files and substitute macros in their names and contents. A condition macro can tell whether to create the file.
+            // In file contents, conditional sections (ifs) are handled before macro substitution.
             foreach (FileInfo file in sourceFolder.GetFiles())
             {
                 string targetFileName;
@@ -75,7 +79,7 @@ namespace TargetCreation
                 {
                     System.IO.File.WriteAllText(
                                      Path.Combine(targetFolder.FullName, targetFileName),
-                                     substituteMacros(System.IO.File.ReadAllText(file.FullName), macroDictionary));
+                                     substituteMacros(If.ApplyIfs(System.IO.File.ReadAllText(file.FullName), macroDictionary), macroDictionary));
                 }
             } // foreach (FileInfo file
         } // copyAndProcessFilesRecursively

@@ -57,7 +57,7 @@
 
 
 //  this contains all the organelles in the collection. the organelle information structures declared below can be referenced in the organelle modules
-namespace moba_library
+namespace ##PACKAGE_NAME##_library
 {
-//    extern const organelle_info xxx_info;
-}  //  namespace moba_library
+//    extern const organelle_info xxx_org_info;
+}  //  namespace ##PACKAGE_NAME##_library

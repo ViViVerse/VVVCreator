@@ -76,7 +76,7 @@
   </ItemGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <PreprocessorDefinitions>_VVV_SYMBIOSIS_LIB_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_VVV_##uc(UND_PACKAGE_NAME##_SYMBIOSIS_LIB_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

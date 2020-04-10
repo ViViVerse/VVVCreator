@@ -68,9 +68,6 @@ namespace VVVCreator
                 System.Windows.Forms.Application.Exit();
                 return;
             }
-
-            // Fill the macros list view with the macro definitions
-            //fillMacrosListView();
         } // mainForm_Load
 
 
@@ -270,9 +267,10 @@ namespace VVVCreator
         private void buttonCreateTarget_Click(object sender, EventArgs e)
         {
             // Check whether all user macros do have values. If one does not, warn the user.
+            bool confirmed = false;
             foreach (MacroDefinition macroDefinition in MacroDefinitions)
             {
-                if (macroDefinition.Value == "")
+                if (macroDefinition.Value == "" && !confirmed)
                 {
                     if (MessageBox.Show(
                                      "At least one of the user macros is empty. Continue?",
@@ -281,6 +279,7 @@ namespace VVVCreator
                     {
                         return;
                     }
+                    confirmed = true;
                 }
             } 
 
