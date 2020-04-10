@@ -84,6 +84,17 @@ The use of entire folders and files can be controlled with a conditional macro e
 
 In this example, the entire file or folder is only created in the target if USE_FILE evaluates to 'true'. This macro entry must be the first entry in the file or folder name.
 
+### Conditional sections
+
+Text sections can be included conditionally using macros:
+
+\#\#INS_SECT?\#\#<br />
+    section text<br />
+\#\#}\#\#<br />
+
+LF or CR LF directly following the section delimiters are removed. Condition negation can be done using '!'.
+Complex conditions can be achieved by negation (else) and nesting (and). Unfortunately, 'or' needs section duplication.
+
 ## Examples
 
 For further examples, please see the existing templates.
