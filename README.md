@@ -16,8 +16,8 @@ When creating a template, you have to provide **meta information** and **templat
 
 The meta information consists of two files:
 
-+ MacroDefinitions.xml<br />Contains a list of the macros (s.b.) used in the template files, with descripotions and default values.
-+ WhatToDoNext.html<br />Contains the text which is displayed to the user after the target has been successfully created.
++ Template.xml<br />Contains a short description of the template, a hint where to instatiate it and a list of the macros (see below) used in the template files, with descriptions and default values.
++ WhatToDoNext.html<br />Contains the text which is displayed to the user after the target has been successfully created. Some of the template examples use style.css in the Template folder.
 
 The template files reside in a folder called _Content_. The files and subfolders in this folder are copied to the target folder.
 
