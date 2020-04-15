@@ -31,7 +31,7 @@ namespace TargetCreation
         /// <param name="templateFolder">The folder which contains the template folders and files. It itself will not be copied</param>
         /// <param name="macroDefinitions">The macro dictionary used for substitution.</param>
         /// <param name="targetFolder">The target folder to which the contents of the template folder will be copied.</param>
-        public static void CreateTarget(string templateFolder, ref List<MacroDefinition> macroDefinitions, string targetFolder)
+        public static void CreateTarget(string templateFolder, List<MacroDefinition> macroDefinitions, string targetFolder)
         {
             // Create a macro dictionary from the definitions
             Dictionary<string, string> macroDictionary = new Dictionary<string, string>();

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml;
 
 namespace TargetCreation
 {
@@ -33,22 +30,22 @@ namespace TargetCreation
         /// <summary>
         /// The name of the macro.
         /// </summary>
-        public string Name;
+        public string Name { get; }
 
         /// <summary>
         /// The type of the macro.
         /// </summary>
-        public MacroType Type;
+        public MacroType Type { get; }
 
         /// <summary>
         /// A descriptive text which shall make it easier for the user to provide the correct value for the macro.
         /// </summary>
-        public string Description;
+        public string Description { get; }
 
         /// <summary>
         /// The value of the macro. The macro entry in the template will be replaced by this text.
         /// </summary>
-        public string Value;
+        public string Value { get; set; }
 
 
         /// <summary>
@@ -65,45 +62,6 @@ namespace TargetCreation
             Description = description;
             Value = defaultValue == null ? "" : defaultValue;
         } // MacroDefinition
-
-
-        /// <summary>
-        /// Reads the macro definitions in the given xml file.
-        /// </summary>
-        /// <param name="xmlFileSpec">The absolute spec of the xml file.</param>
-        /// <returns>The definitions read from the file.</returns>
-        public static List<MacroDefinition> ReadFromXml(string xmlFileSpec)
-        {
-            // Load the xml file.
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(xmlFileSpec);
-
-            // Look for the first node that really contains data.
-            XmlNode dataNode = xmlDoc.FirstChild;
-            while (!dataNode.HasChildNodes && dataNode.NextSibling != null)
-                dataNode = dataNode.NextSibling;
-            XmlNodeList macroNodes = dataNode.ChildNodes;
-
-            // Loop through all nodes.
-            List<MacroDefinition> macroDefinitions = new List<MacroDefinition>();
-            foreach (XmlNode macroNode in macroNodes)
-            {
-                // Read the macro name, type and description. The value is not read.
-                string macroName = macroNode["Name"].InnerText;
-                MacroType macroType = (MacroType)Enum.Parse< MacroType>(macroNode["Type"].InnerText);
-                string macroDescription = macroNode["Description"].InnerText;
-                XmlElement defaultValueElement = macroNode["DefaultValue"];
-                string macroDefaultValue = defaultValueElement == null ? null : defaultValueElement.InnerText;
-
-                // Create a new macro data entry.
-                MacroDefinition macroDefinition = new MacroDefinition(macroName, macroType, macroDescription, macroDefaultValue);
-
-                // Add the new macro data entry to our list.
-                macroDefinitions.Add(macroDefinition);
-            }
-
-            return macroDefinitions;
-        } // ReadFromXml
 
 
         /// <summary>

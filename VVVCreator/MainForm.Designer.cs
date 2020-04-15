@@ -14,6 +14,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemExit;
         private System.Windows.Forms.MenuStrip menuStripMain;
         private System.Windows.Forms.ComboBox comboBoxTemplates;
+        private System.Windows.Forms.Label labelTemplateDescription;
         private System.Windows.Forms.ListView listViewMacros;
         private System.Windows.Forms.ColumnHeader colhdrMacroName;
         private System.Windows.Forms.ColumnHeader colhdrMacroValue;
@@ -49,6 +50,7 @@
             this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem("Exit", null, new System.EventHandler(menuFileExit_Click));
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.comboBoxTemplates = new System.Windows.Forms.ComboBox();
+            this.labelTemplateDescription = new System.Windows.Forms.Label();
             this.listViewMacros = new System.Windows.Forms.ListView();
             this.colhdrMacroName = new System.Windows.Forms.ColumnHeader();
             this.colhdrMacroValue = new System.Windows.Forms.ColumnHeader();
@@ -76,7 +78,17 @@
             this.comboBoxTemplates.Name = "comboBoxTemplates";
             this.comboBoxTemplates.Size = new System.Drawing.Size(775, 50);
             this.comboBoxTemplates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.labelTemplateDescription.TabIndex = 0;
             this.comboBoxTemplates.SelectedIndexChanged += new System.EventHandler(this.comboBoxTemplates_SelectedIndexChanged);
+            // 
+            // labelTemplateDescription
+            // 
+            this.labelTemplateDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTemplateDescription.Location = new System.Drawing.Point(13, 60);
+            this.labelTemplateDescription.Name = "labelTemplateDescription";
+            this.labelTemplateDescription.Size = new System.Drawing.Size(775, 60);
+            this.labelTemplateDescription.Text = "Macro description";
             // 
             // listViewMacros
             // 
@@ -89,10 +101,10 @@
             this.listViewMacros.FullRowSelect = true;
             this.listViewMacros.GridLines = true;
             this.listViewMacros.HideSelection = false;
-            this.listViewMacros.Location = new System.Drawing.Point(13, 60);
+            this.listViewMacros.Location = new System.Drawing.Point(13, 123);
             this.listViewMacros.Name = "listViewMacros";
             this.listViewMacros.Size = new System.Drawing.Size(776, 406);
-            this.listViewMacros.TabIndex = 0;
+            this.listViewMacros.TabIndex = 1;
             this.listViewMacros.UseCompatibleStateImageBehavior = false;
             this.listViewMacros.View = System.Windows.Forms.View.Details;
             this.listViewMacros.SelectedIndexChanged += new System.EventHandler(this.listViewMacros_SelectedIndexChanged);
@@ -112,7 +124,7 @@
             // 
             this.labelMacroDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelMacroDescription.Location = new System.Drawing.Point(13, 469);
+            this.labelMacroDescription.Location = new System.Drawing.Point(13, 532);
             this.labelMacroDescription.Name = "labelMacroDescription";
             this.labelMacroDescription.Size = new System.Drawing.Size(775, 63);
             this.labelMacroDescription.TabIndex = 1;
@@ -121,7 +133,7 @@
             // buttonEditMacro
             // 
             this.buttonEditMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonEditMacro.Location = new System.Drawing.Point(12, 539);
+            this.buttonEditMacro.Location = new System.Drawing.Point(12, 602);
             this.buttonEditMacro.Name = "buttonEditMacro";
             this.buttonEditMacro.Size = new System.Drawing.Size(105, 23);
             this.buttonEditMacro.TabIndex = 2;
@@ -132,7 +144,7 @@
             // buttonCreateTarget
             // 
             this.buttonCreateTarget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCreateTarget.Location = new System.Drawing.Point(638, 539);
+            this.buttonCreateTarget.Location = new System.Drawing.Point(638, 602);
             this.buttonCreateTarget.Name = "buttonCreateTarget";
             this.buttonCreateTarget.Size = new System.Drawing.Size(150, 23);
             this.buttonCreateTarget.TabIndex = 3;
@@ -145,11 +157,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 578);
+            this.ClientSize = new System.Drawing.Size(800, 641);
             this.Controls.Add(this.buttonCreateTarget);
             this.Controls.Add(this.buttonEditMacro);
             this.Controls.Add(this.labelMacroDescription);
             this.Controls.Add(this.listViewMacros);
+            this.Controls.Add(this.labelTemplateDescription);
             this.Controls.Add(this.comboBoxTemplates);
             this.Name = "MainForm";
             this.Text = "VVV Creator";

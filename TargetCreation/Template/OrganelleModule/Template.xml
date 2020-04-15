@@ -1,4 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<Template>
+  <Description>Creates an organelle module to which you can then add organelles from collections.</Description>
+  <TargetFolderHint>Choose the organelle/module folder of a package as target folder.</TargetFolderHint>
 <MacroDefinitions>
   <MacroDefinition>
     <Name>PACKAGE_NAME</Name>
@@ -25,4 +28,11 @@
     <Type>UserString</Type>
     <Description>The name of the module as product (for the file information on Windows).</Description>
   </MacroDefinition>
+  <MacroDefinition>
+    <Name>USE_QT</Name>
+    <Type>UserString</Type>
+    <Description>If set to true, appropriate settings are added to the MSBuild and CMake files so that Qt visages can be included.</Description>
+    <DefaultValue>false</DefaultValue>
+  </MacroDefinition>
 </MacroDefinitions>
+</Template>

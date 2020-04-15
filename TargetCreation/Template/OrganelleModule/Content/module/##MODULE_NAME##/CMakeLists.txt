@@ -40,6 +40,104 @@ set_target_properties(##MODULE_NAME##_mod PROPERTIES SUFFIX ".vvvorg")
 
 
 
+##USE_QT?##
+if( USE_QT )
+	if( WIN32 )
+		target_link_libraries(
+			##MODULE_NAME##_mod
+			kernel32
+			user32
+			gdi32
+			winspool
+			comdlg32
+			advapi32
+			shell32
+			ole32
+			oleaut32
+			uuid
+			odbc32
+			odbccp32
+			vvv_mathematics
+			##MODULE_NAME##
+			##MODULE_NAME##_symbiosis
+			vvv_quanta
+			vvv_core_symbiosis
+			vvv_essence
+			vvv_protein
+			vvv_base_symbiosis
+			Qt5::Core
+			Qt5::Widgets
+			Qt5::Gui
+			vvv_visual_qt
+			)
+	elseif( UNIX )
+		target_link_libraries(
+			##MODULE_NAME##_mod
+			-Wl,--start-group
+			pthread
+			dl
+			ssl
+			crypto
+			uuid
+			##MODULE_NAME##
+			##MODULE_NAME##_symbiosis
+			vvv_protein
+			vvv_essence
+			vvv_core_symbiosis
+			vvv_quanta
+			Qt5::Core
+			Qt5::Widgets
+			Qt5::Gui
+			vvv_visual_qt
+			-Wl,--end-group
+			)
+	endif()
+else()
+	if( WIN32 )
+		target_link_libraries(
+			##MODULE_NAME##_mod
+			kernel32
+			user32
+			gdi32
+			winspool
+			comdlg32
+			advapi32
+			shell32
+			ole32
+			oleaut32
+			uuid
+			odbc32
+			odbccp32
+			vvv_mathematics
+			##MODULE_NAME##
+			##MODULE_NAME##_symbiosis
+			vvv_quanta
+			vvv_core_symbiosis
+			vvv_essence
+			vvv_protein
+			vvv_base_symbiosis
+			)
+	elseif( UNIX )
+		target_link_libraries(
+			##MODULE_NAME##_mod
+			-Wl,--start-group
+			pthread
+			dl
+			ssl
+			crypto
+			uuid
+			##MODULE_NAME##
+			##MODULE_NAME##_symbiosis
+			vvv_protein
+			vvv_essence
+			vvv_core_symbiosis
+			vvv_quanta
+			-Wl,--end-group
+			)
+	endif()
+endif()
+##}##
+##!USE_QT?##
 if( WIN32 )
 	target_link_libraries(
 		##MODULE_NAME##_mod
@@ -82,6 +180,7 @@ elseif( UNIX )
 		-Wl,--end-group
 		)
 endif()
+##}##
 
 
 
@@ -125,6 +224,11 @@ target_include_directories(##MODULE_NAME##_mod PRIVATE ${CMAKE_CURRENT_SOURCE_DI
 
 
 if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" )
+##USE_QT?##
+    if( USE_QT )
+        target_compile_options(vvv_visage_mod PRIVATE "-DVVV_USE_QT")
+    endif()
+##}##
 	target_compile_options(##MODULE_NAME##_mod PRIVATE "-O0")
 
 	target_compile_options(##MODULE_NAME##_mod PRIVATE "-g2")
@@ -155,6 +259,11 @@ if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" )
 
 	target_compile_options(##MODULE_NAME##_mod PRIVATE "-std=c++1z")
 elseif( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC" )
+##USE_QT?##
+    if( USE_QT )
+        target_compile_options(vvv_visage_mod PRIVATE "/DVVV_USE_QT")
+    endif()
+##}##
 	target_compile_options(##MODULE_NAME##_mod PRIVATE "/GS")
 	target_compile_options(##MODULE_NAME##_mod PRIVATE "/GL")
 	target_compile_options(##MODULE_NAME##_mod PRIVATE "/analyze-")

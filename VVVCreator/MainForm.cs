@@ -18,9 +18,9 @@ namespace VVVCreator
         private string TemplateName;
 
         /// <summary>
-        /// The software created and user supplied macro definitions.
+        /// The meta data of the selecteed template.
         /// </summary>
-        private List<MacroDefinition> MacroDefinitions;
+        private TemplateMetaData Template;
 
         /// <summary>
         /// The name of the file in which the user defined macro data for the target creation is stored.
@@ -52,15 +52,15 @@ namespace VVVCreator
                 comboBoxTemplates.Items.Add(dir.Name);
             if (comboBoxTemplates.Items.Count == 0)
                 return;
-            // Select the first template and construct the absolute spec of the macro definitions file in its folder.
+            // Select the first template and construct the absolute spec of the meta data file in its folder.
             TemplateName = templateFolder.GetDirectories()[0].Name;
             comboBoxTemplates.SelectedIndex = 0;
-            string macroDefinitionsFileSpec = Path.Combine(templateFolder.GetDirectories()[0].FullName, "MacroDefinitions.xml");
+            string templateMetaDataFileSpec = Path.Combine(templateFolder.GetDirectories()[0].FullName, "Template.xml");
 
             try
             {
-                // Read the macro definitions from the xml file.
-                MacroDefinitions = MacroDefinition.ReadFromXml(macroDefinitionsFileSpec);
+                // Read the template meta data from the xml file.
+                Template = TemplateMetaData.ReadFromXml(templateMetaDataFileSpec);
             }
             catch (Exception ex)
             {
@@ -80,14 +80,14 @@ namespace VVVCreator
         /// <param name="e"></param>
         private void menuFileLoad_Click(object sender, EventArgs e)
         {
-            // Since the loaded values will overwrite the current values, warn the user
-            //if (MessageBox.Show(
-            //                 "Loaded user macro values will overwrite the current values. Continue?",
-            //                 "Warning",
-            //                 MessageBoxButtons.YesNo) == DialogResult.No)
-            //{
-            //    return;
-            //}
+            // Since the loaded values will overwrite the current values, warn the user.
+            if (MessageBox.Show(
+                             "Loaded user macro values will overwrite the current values. Continue?",
+                             "Warning",
+                             MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
 
             OpenFileDialog dlg = new OpenFileDialog();
 
@@ -98,7 +98,7 @@ namespace VVVCreator
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
 
-            // Load the user supplied macro data from the xml file
+            // Load the user supplied macro data from the xml file.
             MacroDataFileSpec = dlg.FileName;
             List<MacroData> macroDataList = null;
             try
@@ -111,21 +111,21 @@ namespace VVVCreator
                 return;
             }
 
-            // Fill empty value fields in the macro definitions
+            // Fill value fields in the macro definitions. This overwrites the current values.
             foreach (MacroData macroData in macroDataList)
             {
-                foreach (MacroDefinition macroDefinition in MacroDefinitions)
+                foreach (MacroDefinition macroDefinition in Template.MacroDefinitions)
                 {
-                    if (macroDefinition.Type == MacroType.UserString && macroDefinition.Name == macroData.Name && macroDefinition.Value == "")
+                    if (macroDefinition.Type == MacroType.UserString && macroDefinition.Name == macroData.Name)
                         macroDefinition.Value = macroData.Value;
                 }
             }
 
-            // Display the value data in the macro list view
-            for (int ind = 0; ind < MacroDefinitions.Count; ind++)
+            // Display the value data in the macro list view.
+            for (int ind = 0; ind < Template.MacroDefinitions.Count; ind++)
             {
-                if (MacroDefinitions[ind].Type == MacroType.UserString)
-                    listViewMacros.Items[ind].SubItems[1].Text = MacroDefinitions[ind].Value;
+                if (Template.MacroDefinitions[ind].Type == MacroType.UserString)
+                    listViewMacros.Items[ind].SubItems[1].Text = Template.MacroDefinitions[ind].Value;
             }
         } // menuFileLoad_Click
 
@@ -184,8 +184,8 @@ namespace VVVCreator
 
 
         /// <summary>
-        /// Called whe the user selects an item in the templates combo box. The macro desciptions are read and the macro list
-        /// view is filled accordingly.
+        /// Called whe the user selects an item in the templates combo box. The template meta data is read and the macro list
+        /// view is filled with the macro names and values.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -200,10 +200,9 @@ namespace VVVCreator
 
             try
             {
-                // Read the macro definitions of the selected template.
-                string macroDefinitionsFileSpec = Path.Combine(templateFolder.GetDirectories()[comboBoxTemplates.SelectedIndex].FullName, "MacroDefinitions.xml");
-                // Read the macro definitions from the xml file in the template folder.
-                MacroDefinitions = MacroDefinition.ReadFromXml(macroDefinitionsFileSpec);
+                // Read the template meta data of the selected template.
+                string templateMetaDataFileSpec = Path.Combine(templateFolder.GetDirectories()[comboBoxTemplates.SelectedIndex].FullName, "Template.xml");
+                Template = TemplateMetaData.ReadFromXml(templateMetaDataFileSpec);
             }
             catch (Exception ex)
             {
@@ -212,6 +211,8 @@ namespace VVVCreator
                 return;
             }
 
+            // Display the template description.
+            labelTemplateDescription.Text = Template.Description;
             // Fill the macros list view with the macros of the selected template.
             fillMacrosListView();
         } // listViewMacros_SelectedIndexChanged
@@ -232,7 +233,7 @@ namespace VVVCreator
             else
             {
                 int selItemInd = listViewMacros.SelectedIndices[0];
-                labelMacroDescription.Text = MacroDefinitions[selItemInd].Description;
+                labelMacroDescription.Text = Template.MacroDefinitions[selItemInd].Description;
             }
         } // listViewMacros_SelectedIndexChanged
 
@@ -260,7 +261,7 @@ namespace VVVCreator
 
 
         /// <summary>
-        /// Called when the user clicks the 'Create Target' button. Creates the chosen target. 
+        /// Called when the user clicks the 'Create Target' button. Instantiates the template in the selected folder.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -268,7 +269,7 @@ namespace VVVCreator
         {
             // Check whether all user macros do have values. If one does not, warn the user.
             bool confirmed = false;
-            foreach (MacroDefinition macroDefinition in MacroDefinitions)
+            foreach (MacroDefinition macroDefinition in Template.MacroDefinitions)
             {
                 if (macroDefinition.Value == "" && !confirmed)
                 {
@@ -281,12 +282,14 @@ namespace VVVCreator
                     }
                     confirmed = true;
                 }
-            } 
+            }
+
+            // Give th user a hint which target folder to use.
+            MessageBox.Show(Template.TargetFolderHint, "Hint");
 
             // Let the user choose the target folder.
             FolderBrowserDialog dlg = new FolderBrowserDialog();
 
-            dlg.Description = "Choose the folder in which the new chosen target will be created";
             dlg.ShowNewFolderButton = true;
             dlg.RootFolder = Environment.SpecialFolder.Personal;
 
@@ -298,7 +301,7 @@ namespace VVVCreator
             string templateContentPath = Path.Combine(templatePath, "Content");
             try
             {
-                TargetCreation.TargetCreator.CreateTarget(templateContentPath, ref MacroDefinitions, dlg.SelectedPath);
+                TargetCreation.TargetCreator.CreateTarget(templateContentPath, Template.MacroDefinitions, dlg.SelectedPath);
             }
             catch (Exception ex)
             {
@@ -327,13 +330,13 @@ namespace VVVCreator
 
 
         /// <summary>
-        /// Fill the macros list view with the macro definitions in MacroDefinitions.
+        /// Fill the macros list view with the macro definitions in Template.MacroDefinitions.
         /// </summary>
         private void fillMacrosListView()
         {
             // Fill the macros list view with the macro definitions. System macro values are set by the software.
             // Non-user suppliable macros are grayed out.
-            foreach (MacroDefinition macroDefinition in MacroDefinitions)
+            foreach (MacroDefinition macroDefinition in Template.MacroDefinitions)
             {
                 ListViewItem item;
                 item = new ListViewItem(macroDefinition.Name);
@@ -360,6 +363,7 @@ namespace VVVCreator
         /// </summary>
         private void saveUserMacroDataAs()
         {
+            // Display the Save As dialog.
             SaveFileDialog dlg = new SaveFileDialog();
 
             dlg.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -381,7 +385,7 @@ namespace VVVCreator
         {
             // Extract the user supplied macro data.
             List<MacroData> macroDataList = new List<MacroData>();
-            foreach (MacroDefinition macroDefinition in MacroDefinitions)
+            foreach (MacroDefinition macroDefinition in Template.MacroDefinitions)
             {
                 if (macroDefinition.Type == MacroType.UserString)
                 {
@@ -404,16 +408,16 @@ namespace VVVCreator
             if (listViewMacros.SelectedIndices.Count == 0)
                 return;
             int selItemInd = listViewMacros.SelectedIndices[0];
-            if (MacroDefinitions[selItemInd].Type != MacroType.UserString)
+            if (Template.MacroDefinitions[selItemInd].Type != MacroType.UserString)
                 return;
 
             // Display the edit macro dialog.
-            EditMacroDialog dlg = new EditMacroDialog(MacroDefinitions[selItemInd].Name, MacroDefinitions[selItemInd].Value);
+            EditMacroDialog dlg = new EditMacroDialog(Template.MacroDefinitions[selItemInd].Name, Template.MacroDefinitions[selItemInd].Value);
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
 
             // Set the new macro value and display it in the list view.
-            MacroDefinitions[selItemInd].Value = dlg.MacroValue;
+            Template.MacroDefinitions[selItemInd].Value = dlg.MacroValue;
             listViewMacros.Items[selItemInd].SubItems[1].Text = dlg.MacroValue;
         } // editMacro
     }  //  class MainForm
