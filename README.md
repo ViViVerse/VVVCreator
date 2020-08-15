@@ -61,6 +61,7 @@ These are the existing modifiers:
 + uc<br />Convert the entire macro value to uppercase.
 + lc<br />Convert the entire macro value to lowercase.
 + us<br />Convert the entire macro value to lowercase and put an underscore in front of uppercase letters and digits. No underscore is put at the beginning of the macro value. If there are groups of uppercase letters an underscore is only put in front of the first and last letter. If there are groups of digits an underscore is only put in front of the first digit. E.g. VVVFlowerPot3d becomes vvv_flower_pot_3d.
++ dus<br />Convert the first character to uppercase, remove all underscores and convert the first letter behind the removed underscore to uppercase.
 
 ### Conditional macros
 
