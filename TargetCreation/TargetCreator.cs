@@ -15,13 +15,15 @@ namespace TargetCreation
         {
             /// <summary>No modifier.</summary> 
             None,
-            /// <summary> Make the entire string uppercase.</summary>
+            /// <summary>Make the entire string uppercase.</summary>
             UpperCase,
-            /// <summary> Make the entire string lowercase.</summary>
+            /// <summary>Make the entire string lowercase.</summary>
             LowerCase,
-            /// <summary> Make the entire string lowercase and put an underscore in front of each uppercase letter,
+            /// <summary>Make the entire string lowercase and put an underscore in front of each uppercase letter,
             /// except at the beginning and after other uppercase letters.</summary>
-            Underscore
+            Underscore,
+            /// <summary>Make the first character upperscore, replace any underscore and make the following character upperscore.</summary>
+            Deunderscore
         } // enum ModifierType
 
 
@@ -262,7 +264,7 @@ namespace TargetCreation
 
 
         /// <summary>
-        /// If the given macro name contains a modifier, indicated by a '(' (like the opening paranthesis of a function),<br />
+        /// If the given macro name contains a modifier, indicated by a '(' (like the opening parenthesis of a function),<br />
         /// the modfier is removed from the macro name. If the modifier is unknown an exception is thrown.
         /// </summary>
         /// <param name="macroName">On entry, this contains the macro name and maybe a modifier. On exit, the modifier will have been removed.</param>
@@ -288,6 +290,9 @@ namespace TargetCreation
             // Underscores and lowercase instead of uppercase.
             else if (modifier == "us")
                 modType = ModifierType.Underscore;
+            // Underscores are removed and the following lowercase character is replaced by uppercase.
+            else if (modifier == "dus")
+                modType = ModifierType.Deunderscore;
             // Unknown modifier.
             else
                 throw new Exception("The modifier " + modifier + " is unknown.");
@@ -314,6 +319,8 @@ namespace TargetCreation
                     return macroValue.ToLower();
                 case ModifierType.Underscore:
                     return toUnderscore(macroValue);
+                case ModifierType.Deunderscore:
+                    return toDeunderscore(macroValue);
             }
             throw new Exception("The modifier " + modType.ToString() + " is unknown.");
         } // applyModifier
@@ -388,5 +395,36 @@ namespace TargetCreation
 
             return outText.ToString();
         } // toUnderscore
+
+        /// <summary>
+        /// Translates the first character of the string to uppercase. Then removes all underscores from the string and translates the character following
+        /// the underscore to uppercase.
+        /// </summary>
+        /// <param name="InText">The input text.</param>
+        /// <returns>The manipulated text.</returns>
+        private static string toDeunderscore(string InText)
+        {
+            // If the given string is empty, return it
+            if (InText.Length == 0)
+                return InText;
+
+            // Translate the first character to uppercase.
+            StringBuilder outText = new StringBuilder(InText);
+            if (Char.IsLetter(outText[0]))
+                outText[0] = Char.ToUpper(outText[0]);
+
+            // Loop through the rest of the text.
+            int ind = 0;
+            while ((ind = outText.ToString().IndexOf('_', ind)) != -1)
+            {
+                // Remove the underscore.
+                outText.Remove(ind, 1);
+                // If there is a following letter, make it uppercase.
+                if (ind != outText.Length && Char.IsLetter(outText[ind]))
+                    outText[ind] = Char.ToUpper(outText[ind]);
+            } // ((ind = outText
+
+            return outText.ToString();
+        } // toDeunderscore
     } // class TargetCreation
 }

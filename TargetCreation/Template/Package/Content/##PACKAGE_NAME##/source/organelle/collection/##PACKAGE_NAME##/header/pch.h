@@ -45,7 +45,4 @@
 
 //  ViViVerse includes needed by the library
 #include "vvv_essence.h"
-using namespace vvv;
 #include "##PACKAGE_NAME##_package.h"
-using namespace ##UND_PACKAGE_NAME##_package;
-using namespace ##UND_PACKAGE_NAME##_symbiosis;

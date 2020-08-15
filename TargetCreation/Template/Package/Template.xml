@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Template>
+<Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Template.xsd">
   <Description>Creates an entire VVV package.</Description>
   <TargetFolderHint>Choose the ViViVerse/software/package folder as target folder.</TargetFolderHint>
   <MacroDefinitions>

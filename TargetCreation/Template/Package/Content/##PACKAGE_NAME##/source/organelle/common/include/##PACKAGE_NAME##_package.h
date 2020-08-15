@@ -11,7 +11,7 @@
  *  must be defined before including this file.
  * ------------------------------------------------------------------------------------------------------------------------------------------------------------
  * Created:
- *  ##CREATION_DATE##
+ *  ##DATE##
  * ------------------------------------------------------------------------------------------------------------------------------------------------------------
  * Copyright (c):
  *  ##COPYRIGHT##  
@@ -45,8 +45,6 @@
 #ifndef VVV_WITHOUT_ESSENCE
     #include "vvv_essence.h"
 #endif
-//  family names and guids, species names
-#include "##PACKAGE_NAME##_symbiosis.h"
 
 
 
@@ -58,13 +56,8 @@
 
 
 
-namespace ##UND_PACKAGE_NAME##_package
+namespace vvv::vvvpkg::##UND_PACKAGE_NAME##_package
 {
-
-
-
-//  having the using directives here in the namespace does not force others to use the namespaces as well, while still keeping this compilable
-using namespace vvv;
 
 
 
@@ -83,6 +76,10 @@ using namespace vvv;
 
 
 
+}  //  namespace vvv::vvvpkg::##UND_PACKAGE_NAME##_package
+
+
+
 /**************************************************************************************************************************************************************\
  *
  *  Includes
@@ -96,7 +93,5 @@ using namespace vvv;
     //  error codes
     #include "##PACKAGE_NAME##_exception.h"
 #endif
-
-
-
-}  //  namespace ##UND_PACKAGE_NAME##_package
+//  species names
+#include "##PACKAGE_NAME##_symbiosis.h"

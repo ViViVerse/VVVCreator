@@ -44,7 +44,4 @@
 #include "vvv_pch.h"
 
 //  ViViVerse includes needed by the library
-#include "vvv_essence.h"
-using namespace vvv;
 #include "vvv_protein.h"
-using namespace vvv_protein;

@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Template\MacroData.xsd" />
     <None Remove="Template\MobaCanSensor\style.css" />
+    <None Remove="Template\Template.xsd" />
   </ItemGroup>
 
 </Project>

@@ -9,7 +9,7 @@
  *  Contains all definitions and declarations needed for being in symbioses with organelles.
  * ------------------------------------------------------------------------------------------------------------------------------------------------------------
  * Created:
- *  ##CREATION_DATE##
+ *  ##DATE##
  * ------------------------------------------------------------------------------------------------------------------------------------------------------------
  * Copyright (c):
  *  ##COPYRIGHT##  
@@ -40,7 +40,9 @@
 
 
 
-namespace ##UND_PACKAGE_NAME##_symbiosis
+namespace vvv::vvvpkg
+{
+inline namespace ##PACKAGE_NAME##
 {
 
 
@@ -65,4 +67,5 @@ namespace ##UND_PACKAGE_NAME##_symbiosis_strings
 
 
 
-}  //  namespace ##UND_PACKAGE_NAME##_symbiosis
+}  //  inline namespace ##PACKAGE_NAME##
+}  //  namespace vvv::vvvpkg

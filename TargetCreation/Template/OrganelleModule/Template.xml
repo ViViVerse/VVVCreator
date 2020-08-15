@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Template>
+<Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Template.xsd">
   <Description>Creates an organelle module to which you can then add organelles from collections.</Description>
   <TargetFolderHint>Choose the organelle/module folder of a package as target folder.</TargetFolderHint>
 <MacroDefinitions>
@@ -32,7 +32,7 @@
     <Name>USE_QT</Name>
     <Type>UserString</Type>
     <Description>If set to true, appropriate settings are added to the MSBuild and CMake files so that Qt visages can be included.</Description>
-    <DefaultValue>false</DefaultValue>
+    <Value>false</Value>
   </MacroDefinition>
 </MacroDefinitions>
 </Template>

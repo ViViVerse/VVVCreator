@@ -73,7 +73,7 @@ namespace TargetCreation
                 string macroName = macroNode["Name"].InnerText;
                 MacroType macroType = (MacroType)Enum.Parse<MacroType>(macroNode["Type"].InnerText);
                 string macroDescription = macroNode["Description"].InnerText;
-                XmlElement defaultValueElement = macroNode["DefaultValue"];
+                XmlElement defaultValueElement = macroNode["Value"];
                 string macroDefaultValue = defaultValueElement == null ? null : defaultValueElement.InnerText;
 
                 // Create a new macro definition entry and add it to the list.

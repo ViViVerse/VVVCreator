@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Template.xsd">
+  <Description>Creates a family to be included in a symbiosis project.</Description>
+  <TargetFolderHint>Choose the symbiosis project folder as target folder.</TargetFolderHint>
+  <MacroDefinitions>
+    <MacroDefinition>
+      <Name>FAMILY_NAME</Name>
+      <Type>UserString</Type>
+      <Description>The name of the family in lower case, without the leading 'family_'. Must not contain whitespace. Example: slope_sensor or thermostat</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>PACKAGE_NAME</Name>
+      <Type>UserString</Type>
+      <Description>The name of the package to which the family will be added. Example: vvv_base</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>COPYRIGHT</Name>
+      <Type>UserString</Type>
+      <Description>The copyright string for the file headers.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>HAS_COMMANDS</Name>
+      <Type>UserString</Type>
+      <Description>If true, the code for providing commands is added.</Description>
+      <Value>true</Value>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>HAS_SYNCHRONOUS_COMMANDS</Name>
+      <Type>UserString</Type>
+      <Description>If true, the code for providing an example synchronous command is added. HAS_COMMANDS must be set to true as well.</Description>
+      <Value>true</Value>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>HAS_ASYNCHRONOUS_COMMANDS</Name>
+      <Type>UserString</Type>
+      <Description>If true, the code for providing an example asynchronous command is added. HAS_COMMANDS must be set to true as well.</Description>
+      <Value>true</Value>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>HAS_METABOLICS</Name>
+      <Type>UserString</Type>
+      <Description>If true, the code for providing an example metabolic is added.</Description>
+      <Value>true</Value>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>HAS_GENES</Name>
+      <Type>UserString</Type>
+      <Description>If true, the code for providing an example gene is added.</Description>
+      <Value>true</Value>
+    </MacroDefinition>
+  </MacroDefinitions>
+</Template>

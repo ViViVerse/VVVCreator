@@ -44,5 +44,4 @@
 #include "vvv_pch.h"
 
 #include "vvv_essence.h"
-using namespace vvv;
 #include "##PACKAGE_NAME##_library.h"
