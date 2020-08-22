@@ -40,6 +40,18 @@ set_target_properties(##PACKAGE_NAME##_mod PROPERTIES SUFFIX ".vvvorg")
 
 
 
+##!USE_QT?##
+if( USE_QT )
+    set( QtLibraries Qt5::Core
+                     Qt5::Widgets
+                     Qt5::Gui
+                     Qt5::Quick
+                     Qt5::Qml
+                     vvv_visual_qt                     
+       )
+endif()
+##}##
+
 if( WIN32 )
 	target_link_libraries(
 		##PACKAGE_NAME##_mod
@@ -63,6 +75,9 @@ if( WIN32 )
 		vvv_essence
 		vvv_protein
 		vvv_base_symbiosis
+##!USE_QT?##
+        ${QtLibraries}
+##}##
 		)
 elseif( UNIX )
 	target_link_libraries(
@@ -79,6 +94,9 @@ elseif( UNIX )
 		vvv_essence
 		vvv_core_symbiosis
 		vvv_quanta
+##!USE_QT?##
+        ${QtLibraries}
+##}##
 		-Wl,--end-group
 		)
 endif()

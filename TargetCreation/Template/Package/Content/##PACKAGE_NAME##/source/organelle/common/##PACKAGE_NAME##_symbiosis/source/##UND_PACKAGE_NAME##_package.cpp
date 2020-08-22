@@ -41,7 +41,7 @@
 
 
 
-namespace vvv::vvvpkg::##UND_PACKAGE_NAME##
+namespace vvv::vvvpkg::##UND_PACKAGE_NAME##_package
 {
 
 
@@ -59,4 +59,4 @@ organelle_package_description ##UND_PACKAGE_NAME##_package::our_pkg_desc(guid(ma
 
 
 
-}  //  namespace vvv::vvvpkg::##UND_PACKAGE_NAME##
+}  //  namespace vvv::vvvpkg::##UND_PACKAGE_NAME##_package

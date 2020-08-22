@@ -44,5 +44,12 @@
 #include "vvv_pch.h"
 
 //  ViViVerse includes needed by the library
-#include "vvv_essence.h"
+##!USE_QT?##
+#include "vvv_protein.h"
+##}##
+##USE_QT?##
+#ifdef VVV_USE_QT
+    #include "vvv_visual_qt.h"
+#endif
+##}##
 #include "##PACKAGE_NAME##_package.h"

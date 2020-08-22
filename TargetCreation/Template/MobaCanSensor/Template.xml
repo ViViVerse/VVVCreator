@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Template.xsd">
+  <Description>Creates a MOBA CAN sensor with a single measurement value message id.</Description>
+  <TargetFolderHint>Choose the collection project folder as target folder.</TargetFolderHint>
+  <MacroDefinitions>
+    <MacroDefinition>
+      <Name>SENSOR_NAME</Name>
+      <Type>UserString</Type>
+      <Description>The name of the sensor in lower case. Must not contain whitespace. Example: slope_sensor or wire_rope</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>FAMILY_NAME</Name>
+      <Type>UserString</Type>
+      <Description>The name of the family to which the sensor belongs, without the leading 'family_'. This depends on what the sensor is measuring. Look into symbiosis libraries for available families. Example: length_sensor</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>CAN_MSG_ID</Name>
+      <Type>UserString</Type>
+      <Description>The id of the CAN message which contains the measurement value. Example: 0x00AA</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>MEAS_DIM</Name>
+      <Type>UserString</Type>
+      <Description>The phsysical dimension measured by the sensor. This is the type of the main metabolic of the family. Example: length or angle</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>MSG_ID_NAME</Name>
+      <Type>UserString</Type>
+      <Description>An abbreviated name which is appended to 'can_msg_id_'. Example: rot or len</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>OBJECT_NAME</Name>
+      <Type>UserString</Type>
+      <Description>The name with which the sensor appears in the agora and demiurg. Example: MobaRotation</Description>
+    </MacroDefinition>
+  </MacroDefinitions>
+</Template>

@@ -188,6 +188,7 @@ protected:
 
 ##HAS_ASYNCHRONOUS_COMMANDS?##
 //  partial standard implementation of asynchronous commands
+public:
     virtual void async_example(const async_exec_cont& asex_cont) override;
 ##}##
 

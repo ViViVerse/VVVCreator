@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>VVVCreator Success</title>
+    <link rel="stylesheet" href="../Style.css">
+    <!--<script src="script.js"></script>-->
+</head>
+  <body>
+      <div><img src="../VVVLogo.png" style="width:240px"/></div>
+      <h2>You have successfully created a new MOBA CAN Sensor!</h2>
+      <div>
+        A .h and a .cpp file have been created in the 'header' and 'source' directories of the collection folder. This is what you have to do now:
+        <ol>
+            <li>
+                Add the .h and .cpp files to the collection project files (MSBuild and CMake).
+            </li><br />
+            <li>
+                <div>
+                    Enter the <b>species name</b> into the symbiosis library header of the package (<code>organelle/common/include/vvv_moba_symbiosis.h</code>):<br /><br />
+                    <code>inline const wchar species_moba_xxx[] = L"MobaXxx";</code>
+                </div>
+            </li><br />
+            <li>
+                <div>
+                    Make an <b>organelle info</b> entry into the collection library header (<code>organelle/collection/include/vvv_moba_library.h</code>):<br /><br />
+                    <code>extern const organelle_info moba_xxx_org_info;</code>
+                </div>
+            </li><br />
+            <li>
+                <div>
+                    Reference the organelle info in the module of the package (<code>organelle/module/source/vvv_moba.cpp</code>):<br /><br />
+                    <code>&moba_library::moba_xxx_org_info,</code>
+                </div>
+            </li>
+        </ol>
+        <p>After this, you can build the the package.</p>
+      </div>      
+  </body>
+</html>
