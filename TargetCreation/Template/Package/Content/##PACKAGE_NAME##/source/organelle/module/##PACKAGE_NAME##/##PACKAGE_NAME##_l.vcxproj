@@ -73,6 +73,14 @@
       <Command>cp $(RemoteTargetPath) $(VVV_RemoteBinaryDir)/$(VVV_RemoteBuildPlatformDir)/$(VVV_RemoteBuildConfigDir)/##PACKAGE_NAME##.vvvorg</Command>
     </RemotePostBuildEvent>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\collection\##PACKAGE_NAME##\##PACKAGE_NAME##_l.vcxproj">
+      <Project>##LNX_COLL_PROJECT_GUID##</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\##PACKAGE_NAME##_symbiosis\##PACKAGE_NAME##_symbiosis_l.vcxproj">
+      <Project>##LNX_SYM_PROJECT_GUID##</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>

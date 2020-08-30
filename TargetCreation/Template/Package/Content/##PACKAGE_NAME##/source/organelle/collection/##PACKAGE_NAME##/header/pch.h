@@ -50,6 +50,8 @@
 ##USE_QT?##
 #ifdef VVV_USE_QT
     #include "vvv_visual_qt.h"
+#else
+    #include "vvv_protein.h"
 #endif
 ##}##
 #include "##PACKAGE_NAME##_package.h"
