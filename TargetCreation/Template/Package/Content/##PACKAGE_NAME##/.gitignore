@@ -9,7 +9,6 @@
 **/Debug
 **/internal
 runtime/quality
-/framework/source/host/vvv_universal/Generated Files
 **/obj
 **/ipch
 *.o

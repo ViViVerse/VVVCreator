@@ -24,10 +24,10 @@ if( USE_QT )
     set(CMAKE_AUTOUIC ON)
     #Since the addition of ${VVV_PackageDir} to vvv_all.props.cmake include_directories(), the moc generation has a problem with pch.h
     #files situated in one of the subfolders of the package folder. see also vvv_visual_qt.
-    if(${CMAKE_VERSION} VERSION_LESS "3.16.0")
-        set(CMAKE_AUTOMOC_MOC_OPTIONS "-b${CMAKE_CURRENT_SOURCE_DIR}/header/pch.h")
-    else()
+    if(${CMAKE_VERSION} VERSION_EQUAL "3.16.0")
         set(CMAKE_AUTOMOC_MOC_OPTIONS "-bpch.h")
+    else()
+        set(CMAKE_AUTOMOC_MOC_OPTIONS "-b${CMAKE_CURRENT_SOURCE_DIR}/header/pch.h")
     endif()
 endif()
 
