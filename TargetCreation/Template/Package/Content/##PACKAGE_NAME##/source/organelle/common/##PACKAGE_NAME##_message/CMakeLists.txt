@@ -8,7 +8,9 @@
 
 project(##PACKAGE_NAME##_message)
 add_custom_target(${PROJECT_NAME} ALL)
-add_dependencies(${PROJECT_NAME} vvv_message_compiler)
+if( NOT CMAKE_CROSSCOMPILING )
+    add_dependencies(${PROJECT_NAME} vvv_message_compiler)
+endif()
 
 ADD_CUSTOM_COMMAND(
     TARGET ${PROJECT_NAME}
