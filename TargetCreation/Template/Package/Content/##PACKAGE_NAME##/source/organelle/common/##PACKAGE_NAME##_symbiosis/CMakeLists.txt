@@ -59,7 +59,7 @@ target_include_directories(##PACKAGE_NAME##_symbiosis PRIVATE ${CMAKE_CURRENT_SO
 
 
 if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" )
-	target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE "-D_VVV_SYMBIOSIS_LIB_BUILD")
+	target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE "-D_VVV_##uc(UND_PACKAGE_NAME##_SYMBIOSIS_LIB_BUILD")
 
 	target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE "-O0")
 
@@ -91,7 +91,7 @@ if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" )
 
 	target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE "-std=c++1z")
 elseif( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC" )
-	target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE "/D_VVV_SYMBIOSIS_LIB_BUILD")
+	target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE "/D_VVV_##uc(UND_PACKAGE_NAME##_SYMBIOSIS_LIB_BUILD")
 	target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE "/GS")
 	target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE "/GL")
 	target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE "/analyze-")
