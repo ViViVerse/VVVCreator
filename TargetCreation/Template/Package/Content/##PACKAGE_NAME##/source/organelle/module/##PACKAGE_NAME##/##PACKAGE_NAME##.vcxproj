@@ -29,34 +29,24 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>##WIN_MOD_PROJECT_GUID##</ProjectGuid>
     <RootNamespace>##PACKAGE_NAME##</RootNamespace>
-##!USE_QT?##
     <Keyword>Win32Proj</Keyword>
-##}##
-##USE_QT?##
-    <Keyword>QtVS_v302</Keyword>
-##}##
-    <SccProjectName>SAK</SccProjectName>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccProvider>SAK</SccProvider>
     <ProjectName>##PACKAGE_NAME##</ProjectName>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VVV_PropertyDir Condition="exists('$(SolutionDir)software\framework\vvv_framework\source\property')">$(SolutionDir)software\framework\vvv_framework\source\property\</VVV_PropertyDir>
+    <VVV_PropertyDir Condition="exists('$(SolutionDir)source\property')">$(SolutionDir)source\property\</VVV_PropertyDir>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <Import Project="$(VVV_PropertyDir)vvv_location.props" />
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="$(SolutionDir)source\property\vvv_location.props" />
-    <Import Project="$(VVV_ViViVerseDir)software\framework\source\property\vvv_package_organelle_module.props" />
-##USE_QT?##
-    <Import Project="$(VVV_ViViVerseDir)software\framework\source\property\vvv_qt.props" />
-##}##
+    <Import Project="$(VVV_ViViVerseDir)software\framework\vvv_framework\source\property\vvv_package_organelle_module.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
@@ -78,13 +68,6 @@
     </ClCompile>
     <ClCompile Include="source\##PACKAGE_NAME##.cpp" />
   </ItemGroup>
-##USE_QT?##
-  <ItemDefinitionGroup>
-    <Link>
-      <AdditionalDependencies Condition="'$(VVV_Use_Qt)'=='true'">vvv_visual_qt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
-##}##
   <ItemGroup>
     <ProjectReference Include="..\..\collection\##PACKAGE_NAME##\##PACKAGE_NAME##.vcxproj">
       <Project>##WIN_COLL_PROJECT_GUID##</Project>
@@ -94,11 +77,6 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-##USE_QT?##
-  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
-    <Import Project="$(QtMsBuild)\qt.targets" />
-  </ImportGroup>
-##}##
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>

@@ -5,7 +5,7 @@
   </PropertyGroup>
   <!--This import defines the Linux base target path. It can be imported by all vvv_location_linux.props files and allows changing the base path for the
       framework and all packages and applications with only one setting.-->
-  <Import Project="$(VVV_ViViVerseDir)software\framework\source\property\vvv_linux_target.props" />
+  <Import Project="$(VVV_ViViVerseDir)software\framework\vvv_framework\source\property\vvv_linux_target.props" />
   <ItemGroup>
     <BuildMacro Include="VVV_ViViVerseDir">
       <Value>$(VVV_ViViVerseDir)</Value>

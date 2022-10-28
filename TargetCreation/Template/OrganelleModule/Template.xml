@@ -28,11 +28,5 @@
     <Type>UserString</Type>
     <Description>The name of the module as product (for the file information on Windows).</Description>
   </MacroDefinition>
-  <MacroDefinition>
-    <Name>USE_QT</Name>
-    <Type>UserString</Type>
-    <Description>If set to true, appropriate settings are added to the MSBuild and CMake files so that Qt visages can be included.</Description>
-    <Value>false</Value>
-  </MacroDefinition>
 </MacroDefinitions>
 </Template>

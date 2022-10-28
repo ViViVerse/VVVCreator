@@ -1,3 +1,15 @@
+#/**************************************************************************************************************************************************************\
+# *
+# *  General
+# *
+#\**************************************************************************************************************************************************************/
+
+
+
+project(##PACKAGE_NAME##_message)
+
+
+
 #/**************************************************************************************************************************************************************/
 # *
 # *  Compile messages
@@ -6,9 +18,9 @@
 
 
 
-project(##PACKAGE_NAME##_message)
 add_custom_target(${PROJECT_NAME} ALL)
-if( NOT CMAKE_CROSSCOMPILING )
+# if the build is done from the umbrella project and not the package project and if we are not cross compiling, we need the message compiler of the framework
+if(NOT "${CMAKE_PROJECT_NAME}" STREQUAL "${VVV_PackageName}_package" AND NOT CMAKE_CROSSCOMPILING)
     add_dependencies(${PROJECT_NAME} vvv_message_compiler)
 endif()
 

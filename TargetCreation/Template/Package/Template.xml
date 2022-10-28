@@ -29,11 +29,6 @@
       <Description>The name of the module as product (for the file information on Windows).</Description>
     </MacroDefinition>
     <MacroDefinition>
-      <Name>USE_QT</Name>
-      <Type>UserString</Type>
-      <Description>If true, settings and code necessary for using Qt are added.</Description>
-    </MacroDefinition>
-    <MacroDefinition>
       <Name>CREATION_DATE</Name>
       <Type>SysDate</Type>
       <Description>The date of the creation of the package.</Description>

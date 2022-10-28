@@ -43,5 +43,4 @@
 //  the pch.h shared by all
 #include "vvv_pch.h"
 
-#include "vvv_essence.h"
 #include "##PACKAGE_NAME##_library.h"

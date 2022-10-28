@@ -43,7 +43,6 @@
 
 #ifndef _VVV_ORGANELLE_LIB_BUILD
     #include "vvv_essence.h"
-    using namespace vvv;
 #endif  //  #ifndef _VVV_ORGANELLE_LIB_BUILD
 
 

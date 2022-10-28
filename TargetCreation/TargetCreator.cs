@@ -75,13 +75,20 @@ namespace TargetCreation
             // In file contents, conditional sections (ifs) are handled before macro substitution.
             foreach (FileInfo file in sourceFolder.GetFiles())
             {
-                string targetFileName;
-                if ((targetFileName = shallWeCreateFileOrFolder(file.Name, macroDictionary)).Length > 0 &&
-                    (targetFileName = substituteMacros(targetFileName, macroDictionary)).Length > 0)
+                try
                 {
-                    System.IO.File.WriteAllText(
-                                     Path.Combine(targetFolder.FullName, targetFileName),
-                                     substituteMacros(If.ApplyIfs(System.IO.File.ReadAllText(file.FullName), macroDictionary), macroDictionary));
+                    string targetFileName;
+                    if ((targetFileName = shallWeCreateFileOrFolder(file.Name, macroDictionary)).Length > 0 &&
+                        (targetFileName = substituteMacros(targetFileName, macroDictionary)).Length > 0)
+                    {
+                        System.IO.File.WriteAllText(
+                                         Path.Combine(targetFolder.FullName, targetFileName),
+                                         substituteMacros(If.ApplyIfs(System.IO.File.ReadAllText(file.FullName), macroDictionary), macroDictionary));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(file.Name + ": ", ex);
                 }
             } // foreach (FileInfo file
         } // copyAndProcessFilesRecursively

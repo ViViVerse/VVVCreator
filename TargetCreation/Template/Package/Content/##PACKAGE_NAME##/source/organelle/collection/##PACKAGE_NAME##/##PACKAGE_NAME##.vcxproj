@@ -29,41 +29,23 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>##WIN_COLL_PROJECT_GUID##</ProjectGuid>
     <RootNamespace>##PACKAGE_NAME##</RootNamespace>
-##!USE_QT?##
     <Keyword>Win32Proj</Keyword>
-##}##
-##USE_QT?##
-    <Keyword>QtVS_v302</Keyword>
-##}##
-    <SccProjectName>SAK</SccProjectName>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccProvider>SAK</SccProvider>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
-##USE_QT?##
-  <ItemDefinitionGroup>
-    <PostBuildEvent Condition="exists('$(ProjectDir)resource')">
-      <Command>xcopy /Y /D /I "$(ProjectDir)resource\*.qml" "$(VVV_ResourceDir)"</Command>
-      <Message>Copying resource files</Message>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-##}##
+  <PropertyGroup>
+    <VVV_PropertyDir Condition="exists('$(SolutionDir)software\framework\vvv_framework\source\property')">$(SolutionDir)software\framework\vvv_framework\source\property\</VVV_PropertyDir>
+    <VVV_PropertyDir Condition="exists('$(SolutionDir)source\property')">$(SolutionDir)source\property\</VVV_PropertyDir>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <Import Project="$(VVV_PropertyDir)vvv_location.props" />
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="$(SolutionDir)source\property\vvv_location.props" />
-    <Import Project="$(VVV_ViViVerseDir)software\framework\source\property\vvv_package_organelle_collection_lib.props" />
-##USE_QT?##
-    <Import Project="$(VVV_ViViVerseDir)software\framework\source\property\vvv_qt.props" />
-##}##
+    <Import Project="$(VVV_ViViVerseDir)software\framework\vvv_framework\source\property\vvv_package_organelle_collection_lib.props" />
   </ImportGroup>
   <PropertyGroup>
     <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
@@ -84,11 +66,4 @@
     <ClInclude Include="header\pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-##USE_QT?##
-  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
-    <Import Project="$(QtMsBuild)\qt.targets" />
-  </ImportGroup>
-##}##
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
 </Project>
