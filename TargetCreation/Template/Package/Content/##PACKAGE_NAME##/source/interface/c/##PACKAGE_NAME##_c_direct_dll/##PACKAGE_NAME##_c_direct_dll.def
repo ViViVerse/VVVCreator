@@ -1,0 +1,3 @@
+LIBRARY ##PACKAGE_NAME##_c_direct_dll
+EXPORTS
+

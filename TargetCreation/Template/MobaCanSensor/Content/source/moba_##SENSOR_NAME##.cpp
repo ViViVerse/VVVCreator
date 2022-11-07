@@ -155,11 +155,12 @@ void moba_##SENSOR_NAME##::detector::on_data_received(buffer& in_buf)
  Return Value:
 \**************************************************************************************************************************************************************/
 
-moba_##SENSOR_NAME##::moba_##SENSOR_NAME##(const synthesis_info& synth_info) : can_thing<moba_##SENSOR_NAME##>(synth_info),
-                                                                 family_##FAMILY_NAME##(synth_info.my_vivid.get_agora(), guard_),
-                                                                 meas_prot_(true),
-                                                                 request_handler_(*this),
-                                                                 max_time_without_measurement_(max_time_without_measurement)
+moba_##SENSOR_NAME##::moba_##SENSOR_NAME##(const synthesis_info& synth_info) :
+    can_thing<moba_##SENSOR_NAME##>(synth_info),
+    family_##FAMILY_NAME##(synth_info.my_vivid.get_agora(), guard_),
+    meas_prot_(true),
+    request_handler_(*this),
+    max_time_without_measurement_(max_time_without_measurement)
 {
 }  //  moba_##SENSOR_NAME##::moba_##SENSOR_NAME##
 

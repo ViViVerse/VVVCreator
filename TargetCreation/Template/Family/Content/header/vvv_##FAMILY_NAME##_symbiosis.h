@@ -97,17 +97,19 @@ namespace ##FAMILY_NAME##_symbiosis_strings
     Describes the family of the ##FAMILY_NAME## objects.
 \**************************************************************************************************************************************************************/
 
-class fam_desc_##FAMILY_NAME## : public viviversal_family_description<
-                               fam_desc_##FAMILY_NAME##,
-                               ##FAMILY_NAME##_symbiosis_strings::family_##FAMILY_NAME##,
-                               make_guid(##CODE_GUID##)>
+class fam_desc_##FAMILY_NAME## :
+    public viviversal_family_description<
+    fam_desc_##FAMILY_NAME##,
+    ##FAMILY_NAME##_symbiosis_strings::family_##FAMILY_NAME##,
+    make_guid(##CODE_GUID##)>
 {
 //  friends
     friend base_templ;
 
 //  command set
 public:
-    interface csi : public command_set_intf
+    interface csi :
+        public command_set_intf
     {
 ##HAS_SYNCHRONOUS_COMMANDS?##
         virtual i32 sync_example(i32 param) = 0;
@@ -149,9 +151,10 @@ public:
     The family of the ##FAMILY_NAME##s.
 \**************************************************************************************************************************************************************/
 
-class family_##FAMILY_NAME## : public fam_templ<
-                             fam_desc_##FAMILY_NAME##,
-                             family_##FAMILY_NAME##>
+class family_##FAMILY_NAME## :
+    public fam_templ<
+    fam_desc_##FAMILY_NAME##,
+    family_##FAMILY_NAME##>
 {
 //  friends
     friend base_templ;
@@ -161,11 +164,13 @@ public:
     family_##FAMILY_NAME##(
       agora&      ag,
 ##!HAS_GENES?##
-      guard_intf* member) : base_templ(member)
+      guard_intf* member) :
+        base_templ(member)
 ##}##
 ##HAS_GENES?##
       guard_intf* member,
-      i32*        example) : base_templ(member)
+      i32*        example) :
+        base_templ(member)
 ##}##
 ##HAS_METABOLICS?##
                             , mbp_example_(ag, this, 0)
@@ -179,17 +184,17 @@ public:
 //  base class and interface implementations
 protected:
 ##HAS_COMMANDS?##
-    virtual bool execute_command_set_command(
-                   cs_cmd&          command,
-                   buffer*          cmd_buf,
-                   buffer*          res_buf,
-                   command_request* cmd_req) override;
+    bool execute_command_set_command(
+           cs_cmd&          command,
+           buffer*          cmd_buf,
+           buffer*          res_buf,
+           command_request* cmd_req) override;
 ##}##
 
 ##HAS_ASYNCHRONOUS_COMMANDS?##
 //  partial standard implementation of asynchronous commands
 public:
-    virtual void async_example(const async_exec_cont& asex_cont) override;
+    void async_example(const async_exec_cont& asex_cont) override;
 ##}##
 
 ##HAS_ASYNCHRONOUS_COMMANDS?##
@@ -218,9 +223,10 @@ protected:
     The family idea of the ##FAMILY_NAME##s.
 \**************************************************************************************************************************************************************/
 
-class family_idea_##FAMILY_NAME## : public family_idea<
-                                  fam_desc_##FAMILY_NAME##,
-                                  family_idea_##FAMILY_NAME##>
+class family_idea_##FAMILY_NAME## :
+    public family_idea<
+             fam_desc_##FAMILY_NAME##,
+             family_idea_##FAMILY_NAME##>
 {
 //  friends
     friend base_templ;
@@ -231,7 +237,8 @@ public:
       agora&                              ag,
       const vtl_ptr<donor_internal_intf>& don,
       const obj_ptr<dendron>&             den,
-      donid_t                             did) : base_templ(don, den, did)
+      donid_t                             did) :
+    base_templ(don, den, did)
 ##HAS_METABOLICS?##
                                                  , mbp_example_(ag, this, 0)
 ##}##
@@ -245,10 +252,10 @@ public:
 protected:
     //  fam_desc_##FAMILY_NAME##::csi
 ##HAS_SYNCHRONOUS_COMMANDS?##
-    virtual i32 sync_example(i32 param) override;
+    i32 sync_example(i32 param) override;
 ##}##
 ##HAS_ASYNCHRONOUS_COMMANDS?##
-    virtual void async_example(const async_exec_cont& asex_cont) override;
+    void async_example(const async_exec_cont& asex_cont) override;
 ##}##
 
 //  data members

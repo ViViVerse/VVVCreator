@@ -78,12 +78,14 @@ namespace moba_##SENSOR_NAME##_strings
     A ##SENSOR_NAME## sensor.
 \**************************************************************************************************************************************************************/
 
-class moba_##SENSOR_NAME## : public can_thing<moba_##SENSOR_NAME##>,
-                      public donor<moba_##SENSOR_NAME##, family_##FAMILY_NAME##>,
-                      public family_##FAMILY_NAME##
+class moba_##SENSOR_NAME## :
+    public can_thing<moba_##SENSOR_NAME##>,
+    public donor<moba_##SENSOR_NAME##, family_##FAMILY_NAME##>,
+    public family_##FAMILY_NAME##
 {
 //  nested classes
-    class detector : public can_detector
+    class detector :
+        public can_detector
     {
     //  construction, destruction
     public:
@@ -92,7 +94,7 @@ class moba_##SENSOR_NAME## : public can_thing<moba_##SENSOR_NAME##>,
     //  operations
     public:
         //  in_data_handler_intf implementation
-        virtual void on_data_received(buffer& in_buf) override;
+        void on_data_received(buffer& in_buf) override;
 
     //  data members
     protected:
@@ -116,16 +118,16 @@ public:
 //  operations
 public:
     //  organelle implementation
-    virtual void dissolve(void) override;
-    virtual const wchar* get_species(void) const override;
-    virtual void write_genome(void) override;
+    void dissolve(void) override;
+    const wchar* get_species(void) const override;
+    void write_genome(void) override;
     //  family implementation
-    virtual vtl_ptr<donor_intf> get_donor(void) override;
+    vtl_ptr<donor_intf> get_donor(void) override;
     
     //  idea_intf implementation
-    virtual input_type interpret(
-                         full_bridge& bridge,
-                         buffer&      in_buf) override;
+    input_type interpret(
+                 full_bridge& bridge,
+                 buffer&      in_buf) override;
 
 protected:
     //  helpers
@@ -137,7 +139,7 @@ protected:
     //  request_handler_intf (indirectly via request_handler)
     u32 my_handle_request(request* req);
     //  family_##FAMILY_NAME##::csi
-    virtual void calibrate(##MEAS_DIM## new_##SENSOR_NAME##) override;
+    void calibrate(##MEAS_DIM## new_##SENSOR_NAME##) override;
 
 //  constants
     static constexpr u32 can_msg_id_##MSG_ID_NAME## = ##CAN_MSG_ID##;                   //  the possible messages coming from the sensor
@@ -202,7 +204,8 @@ protected:
  Return Value:
 \**************************************************************************************************************************************************************/
 
-inline moba_##SENSOR_NAME##::detector::detector(obj_ptr<can_driver>& driver) : can_detector(driver)
+inline moba_##SENSOR_NAME##::detector::detector(obj_ptr<can_driver>& driver) :
+    can_detector(driver)
 {
 }  //  moba_##SENSOR_NAME##::detector::detector
 

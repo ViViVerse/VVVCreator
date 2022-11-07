@@ -27,30 +27,27 @@
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
     <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
     <LinuxProjectType>{2238F9CD-F817-4ECC-BD14-2524D2669B35}</LinuxProjectType>
-    <SccProjectName>SAK</SccProjectName>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Label="UserMacros">
-    <VVV_PackageName>##MODULE_NAME##</VVV_PackageName>
+    <VVV_PackageName>##PACKAGE_NAME##</VVV_PackageName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VVV_PropertyDir Condition="exists('$(SolutionDir)software\framework\vvv_framework\source\property')">$(SolutionDir)software\framework\vvv_framework\source\property\</VVV_PropertyDir>
+    <VVV_PropertyDir Condition="exists('$(SolutionDir)source\property')">$(SolutionDir)source\property\</VVV_PropertyDir>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <Import Project="$(SolutionDir)source\property\vvv_location_linux.props" />
-  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
+  <Import Project="$(VVV_PropertyDir)vvv_location_linux.props" />
+  <PropertyGroup Label="Configuration">
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <RemoteRootDir>$(VVV_RemoteViViVerseDir)/software</RemoteRootDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <RemoteRootDir>$(VVV_RemoteViViVerseDir)/software</RemoteRootDir>
+    <RemoteRootDir>$(VVV_RemoteSoftwareDir)</RemoteRootDir>
+    <PlatformToolset>WSL2_1_0</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="$(VVV_ViViVerseDir)software\framework\source\property\vvv_package_organelle_module_linux.props" />
+    <Import Project="$(VVV_ViViVerseDir)software\framework\vvv_framework\source\property\vvv_package_organelle_module_linux.props" />
   </ImportGroup>
   <PropertyGroup>
     <IntDir>$(ProjectDir)$(VVV_IntermediateDir)</IntDir>

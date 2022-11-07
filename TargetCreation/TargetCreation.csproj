@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -11,9 +11,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Template\MacroData.xsd" />
-    <None Remove="Template\MobaCanSensor\style.css" />
-    <None Remove="Template\Template.xsd" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\Properties\AssemblyInfo.cs" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\Properties\AssemblyInfo.cs" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\language\##PACKAGE_NAME##_dotnet\##PACKAGE_NAME##_dotnet.projitems" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\language\##PACKAGE_NAME##_dotnet\##PACKAGE_NAME##_dotnet.shproj" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\language\##PACKAGE_NAME##_dotnet\FamilyX.cs" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\##PACKAGE_NAME##_dotnet_test.csproj" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\App.config" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\Program.cs" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\Properties\AssemblyInfo.cs" />
+    <Compile Remove="Template\MacroData.xsd" />
+    <Compile Remove="Template\MobaCanSensor\style.css" />
+    <Compile Remove="Template\Template.xsd" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\language\##PACKAGE_NAME##_dotnet\##PACKAGE_NAME##_dotnet.shproj" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\language\##PACKAGE_NAME##_dotnet\FamilyX.cs" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\##PACKAGE_NAME##_dotnet_test.csproj" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\Program.cs" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\Properties\AssemblyInfo.cs" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\language\##PACKAGE_NAME##_dotnet\##PACKAGE_NAME##_dotnet.projitems" />
+    <Compile Remove="Template\Package\Content\##PACKAGE_NAME##\source\interface\test\##PACKAGE_NAME##_dotnet_test\App.config" />
   </ItemGroup>
 
 </Project>

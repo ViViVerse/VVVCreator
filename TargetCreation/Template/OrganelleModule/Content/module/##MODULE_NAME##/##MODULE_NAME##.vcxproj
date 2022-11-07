@@ -30,24 +30,24 @@
     <ProjectGuid>##GUID##</ProjectGuid>
     <RootNamespace>##MODULE_NAME##</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <SccProjectName>SAK</SccProjectName>
     <ProjectName>##MODULE_NAME##</ProjectName>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VVV_PropertyDir Condition="exists('$(SolutionDir)software\framework\vvv_framework\source\property')">$(SolutionDir)software\framework\vvv_framework\source\property\</VVV_PropertyDir>
+    <VVV_PropertyDir Condition="exists('$(SolutionDir)source\property')">$(SolutionDir)source\property\</VVV_PropertyDir>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <Import Project="$(VVV_PropertyDir)vvv_location.props" />
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="$(SolutionDir)source\property\vvv_location.props" />
-    <Import Project="$(VVV_ViViVerseDir)software\framework\source\property\vvv_package_organelle_module.props" />
+    <Import Project="$(VVV_ViViVerseDir)software\framework\vvv_framework\source\property\vvv_package_organelle_module.props" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
   </PropertyGroup>

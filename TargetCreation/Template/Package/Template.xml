@@ -39,6 +39,11 @@
       <Description>The id of the package organelle folder used in the Windows sln file of msbuild.</Description>
     </MacroDefinition>
     <MacroDefinition>
+      <Name>WIN_INT_GUID</Name>
+      <Type>SysGuid</Type>
+      <Description>The id of the package interface folder used in the Windows sln file of msbuild.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
       <Name>WIN_CFG_GUID</Name>
       <Type>SysGuid</Type>
       <Description>The id of the package configuration folder used in the Windows sln file of msbuild.</Description>
@@ -89,6 +94,21 @@
       <Description>The id of the package organelle folder used in the Linux sln file of msbuild.</Description>
     </MacroDefinition>
     <MacroDefinition>
+      <Name>WIN_INT_C_GUID</Name>
+      <Type>SysGuid</Type>
+      <Description>The id of the package interface c folder used in the Windows sln file of msbuild.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>WIN_INT_LANG_GUID</Name>
+      <Type>SysGuid</Type>
+      <Description>The id of the package interface language folder used in the Windows sln file of msbuild.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>WIN_INT_TEST_GUID</Name>
+      <Type>SysGuid</Type>
+      <Description>The id of the package interface test folder used in the Windows sln file of msbuild.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
       <Name>LNX_CFG_GUID</Name>
       <Type>SysGuid</Type>
       <Description>The id of the package configuration folder used in the Linux sln file of msbuild.</Description>
@@ -132,6 +152,26 @@
       <Name>LNX_MOD_PROJECT_GUID</Name>
       <Type>SysGuid</Type>
       <Description>The id of the package module project used in the Linux vcxproj and sln files of msbuild.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>WIN_INT_STAT_PROJECT_GUID</Name>
+      <Type>SysGuid</Type>
+      <Description>The id of the static library c interface project.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>WIN_INT_DLL_PROJECT_GUID</Name>
+      <Type>SysGuid</Type>
+      <Description>The id of the dynamic library c interface project.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>DOT_NET_SHD_PROJECT_GUID</Name>
+      <Type>SysGuid</Type>
+      <Description>The id of the .NET shared item interface project.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>DOT_NET_TEST_PROJECT_GUID</Name>
+      <Type>SysGuid</Type>
+      <Description>The id of the .NET test interface project.</Description>
     </MacroDefinition>
   </MacroDefinitions>
 </Template>

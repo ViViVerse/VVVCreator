@@ -22,8 +22,10 @@ namespace TargetCreation
             /// <summary>Make the entire string lowercase and put an underscore in front of each uppercase letter,
             /// except at the beginning and after other uppercase letters.</summary>
             Underscore,
-            /// <summary>Make the first character upperscore, replace any underscore and make the following character upperscore.</summary>
-            Deunderscore
+            /// <summary>Make the first character uppercase, replace any underscore and make the following character uppercase.</summary>
+            Deunderscore,
+            /// <summary>Removes curly braces.</summary>
+            RemoveCurlies
         } // enum ModifierType
 
 
@@ -88,7 +90,7 @@ namespace TargetCreation
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception(file.Name + ": ", ex);
+                    throw new Exception(file.Name + ": " + ex.Message);
                 }
             } // foreach (FileInfo file
         } // copyAndProcessFilesRecursively
@@ -300,6 +302,9 @@ namespace TargetCreation
             // Underscores are removed and the following lowercase character is replaced by uppercase.
             else if (modifier == "dus")
                 modType = ModifierType.Deunderscore;
+            // Curly braces are removed.
+            else if (modifier == "rc")
+                modType = ModifierType.RemoveCurlies;
             // Unknown modifier.
             else
                 throw new Exception("The modifier " + modifier + " is unknown.");
@@ -328,6 +333,8 @@ namespace TargetCreation
                     return toUnderscore(macroValue);
                 case ModifierType.Deunderscore:
                     return toDeunderscore(macroValue);
+                case ModifierType.RemoveCurlies:
+                    return toRemoveCurlies(macroValue);
             }
             throw new Exception("The modifier " + modType.ToString() + " is unknown.");
         } // applyModifier
@@ -433,5 +440,17 @@ namespace TargetCreation
 
             return outText.ToString();
         } // toDeunderscore
+
+        private static string toRemoveCurlies(string InText)
+        {
+            StringBuilder outText = new StringBuilder(InText);
+
+            if (outText.Length > 0 && outText[0] == '{')
+                outText = outText.Remove(0, 1);
+            if (outText.Length > 0 && outText[outText.Length - 1] == '}')
+                outText = outText.Remove(outText.Length - 1, 1);
+
+            return outText.ToString();
+        }
     } // class TargetCreation
 }
