@@ -8,6 +8,8 @@ using System.IO;
 using TargetCreation;
 
 
+// For inline editing: https://stackoverflow.com/questions/471859/c-how-do-you-edit-items-and-subitems-in-a-listview
+
 namespace VVVCreator
 {
     public partial class MainForm : Form
