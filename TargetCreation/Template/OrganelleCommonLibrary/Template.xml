@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Template.xsd">
+  <Description>Creates a common organelle library which can be used within its package but also by other packages.</Description>
+  <TargetFolderHint>Choose the organelle folder of a package as target folder.</TargetFolderHint>
+  <MacroDefinitions>
+    <MacroDefinition>
+      <Name>PACKAGE_NAME</Name>
+      <Type>UserString</Type>
+      <Description>The name of the package which contains the common organelle library. Must not contain whitespace.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>LIBRARY_NAME</Name>
+      <Type>UserString</Type>
+      <Description>The name of the common organelle library. Must not contain whitespace.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>UND_LIBRARY_NAME</Name>
+      <Type>UserString</Type>
+      <Description>The name of the library without prefix like 'vvv_'. Must not contain whitespace.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
+      <Name>COPYRIGHT</Name>
+      <Type>UserString</Type>
+      <Description>The copyright string for the file headers.</Description>
+    </MacroDefinition>
+  </MacroDefinitions>
+</Template>

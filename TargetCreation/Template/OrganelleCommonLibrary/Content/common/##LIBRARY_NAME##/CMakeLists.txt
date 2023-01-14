@@ -1,12 +1,12 @@
-#/**************************************************************************************************************************************************************/
+#/**************************************************************************************************************************************************************\
 # *
 # *  General
 # *
-#/**************************************************************************************************************************************************************/
+#\**************************************************************************************************************************************************************/
 
 
 
-project(##PACKAGE_NAME##)
+project(##LIBRARY_NAME##)
 
 
 
@@ -19,24 +19,25 @@ project(##PACKAGE_NAME##)
 
 
 add_library(
-	##PACKAGE_NAME##
+	##LIBRARY_NAME##
 	STATIC
+	source/##UND_LIBRARY_NAME##.cpp
 	source/pch.cpp
 	header/pch.h
-	../include/##PACKAGE_NAME##_library.h
+	../include/##LIBRARY_NAME##.h
 	)
 
 
 
 #/**************************************************************************************************************************************************************/
 # *
-# *  Output directory
+# *  Output properties
 # *
 #/**************************************************************************************************************************************************************/
 
 
 
-set_target_properties(##PACKAGE_NAME## PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${VVV_LibraryDir})
+set_target_properties(##LIBRARY_NAME## PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${VVV_LibraryDir})
 
 
 
@@ -48,7 +49,5 @@ set_target_properties(##PACKAGE_NAME## PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${VVV
 
 
 
-target_include_directories(##PACKAGE_NAME## PRIVATE ${VVV_PackageCollectionDir}/##PACKAGE_NAME##_face_${VVV_FaceType}/header)
-#target_include_directories(##PACKAGE_NAME## PRIVATE ${VVV_PackageDir}/vvv_???other package/source/organelle/common/include)
-target_compile_definitions(##PACKAGE_NAME## PRIVATE _VVV_ORGANELLE_LIB_BUILD)
-target_compile_options(##PACKAGE_NAME## PRIVATE ${VVV_AllCompilerFlags})
+target_compile_definitions(##LIBRARY_NAME## PRIVATE _##LIBRARY_NAME##_LIB_BUILD)
+target_compile_options(##LIBRARY_NAME## PRIVATE ${VVV_AllCompilerFlags})

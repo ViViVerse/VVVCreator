@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Template.xsd">
   <Description>Creates an organelle module to which you can then add organelles from collections.</Description>
-  <TargetFolderHint>Choose the organelle/module folder of a package as target folder.</TargetFolderHint>
+  <TargetFolderHint>Choose the organelle folder of a package as target folder.</TargetFolderHint>
 <MacroDefinitions>
   <MacroDefinition>
     <Name>PACKAGE_NAME</Name>

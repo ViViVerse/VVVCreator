@@ -39,7 +39,7 @@ add_library(
 
 
 
-set_target_properties(##PACKAGE_NAME##_symbiosis PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${VVV_PackageCommonLibDir})
+set_target_properties(##PACKAGE_NAME##_symbiosis PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${VVV_LibraryDir})
 
 
 
