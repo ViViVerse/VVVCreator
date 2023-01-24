@@ -55,7 +55,7 @@ namespace vvv::vvvpkg::##UND_PACKAGE_NAME##_package
 
 
 //  each organelle package has one instance of this
-organelle_package_description ##UND_PACKAGE_NAME##_package::our_pkg_desc(guid(make_guid(##CODE_GUID##)), L"##PACKAGE_NAME##");
+organelle_package_description our_pkg_desc(guid(make_guid(##CODE_GUID##)), L"##PACKAGE_NAME##");
 
 
 

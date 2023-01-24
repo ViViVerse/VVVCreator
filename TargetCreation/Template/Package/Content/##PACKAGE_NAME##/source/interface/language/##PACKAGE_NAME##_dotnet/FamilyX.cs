@@ -34,7 +34,7 @@ namespace VVV
     //{
     //    public delegate void DualSlopeDeliveryDelegate(double CrossSlope, double LongSlope);
 
-    //    [DllImport("##PACKAGE_NAME##_c_direct_dll.dll", EntryPoint = "family_x__subscribe_for_x_metabolic")]
+    //    [DllImport("##PACKAGE_NAME##_c_direct_dll.dll", EntryPoint = "family_x__subscribe_to_x_metabolic")]
     //    public static extern IntPtr SubscribeForXMetabolic(IntPtr Vivid, IntPtr Family, uint UpdatePeriod, XDeliveryDelegate DeliveryFunc);
     //}  //  class FamilyX
 }  //  namespace VVV
