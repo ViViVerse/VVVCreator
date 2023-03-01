@@ -89,6 +89,11 @@
       <Description>The id of the package module project used in the Windows vcxproj and sln files of msbuild.</Description>
     </MacroDefinition>
     <MacroDefinition>
+      <Name>WIN_TEST_PROJECT_GUID</Name>
+      <Type>SysGuid</Type>
+      <Description>The id of the package test project used in the Windows vcxproj and sln files of msbuild.</Description>
+    </MacroDefinition>
+    <MacroDefinition>
       <Name>LNX_ORG_GUID</Name>
       <Type>SysGuid</Type>
       <Description>The id of the package organelle folder used in the Linux sln file of msbuild.</Description>

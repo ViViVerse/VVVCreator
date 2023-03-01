@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_symbiosis"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##", "source\organelle\module\##PACKAGE_NAME##\##PACKAGE_NAME##.vcxproj", "##WIN_MOD_PROJECT_GUID##"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "##PACKAGE_NAME##_test", "source\organelle\module\##PACKAGE_NAME##_test\##PACKAGE_NAME##_test.vcxproj", "##WIN_TEST_PROJECT_GUID##"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "##WIN_CFG_GUID##"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Organelle", "Organelle", "##WIN_ORG_GUID##"
@@ -99,6 +101,18 @@ Global
 		##WIN_MOD_PROJECT_GUID##.Release|Win32.Build.0 = Release|Win32
 		##WIN_MOD_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
 		##WIN_MOD_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
+		##WIN_TEST_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|ARM
+		##WIN_TEST_PROJECT_GUID##.Debug|ARM.Build.0 = Debug|ARM
+		##WIN_TEST_PROJECT_GUID##.Debug|Win32.ActiveCfg = Debug|Win32
+		##WIN_TEST_PROJECT_GUID##.Debug|Win32.Build.0 = Debug|Win32
+		##WIN_TEST_PROJECT_GUID##.Debug|x64.ActiveCfg = Debug|x64
+		##WIN_TEST_PROJECT_GUID##.Debug|x64.Build.0 = Debug|x64
+		##WIN_TEST_PROJECT_GUID##.Release|ARM.ActiveCfg = Release|ARM
+		##WIN_TEST_PROJECT_GUID##.Release|ARM.Build.0 = Release|ARM
+		##WIN_TEST_PROJECT_GUID##.Release|Win32.ActiveCfg = Release|Win32
+		##WIN_TEST_PROJECT_GUID##.Release|Win32.Build.0 = Release|Win32
+		##WIN_TEST_PROJECT_GUID##.Release|x64.ActiveCfg = Release|x64
+		##WIN_TEST_PROJECT_GUID##.Release|x64.Build.0 = Release|x64
 		##WIN_CFG_PROJECT_GUID##.Debug|ARM.ActiveCfg = Debug|Win32
 		##WIN_CFG_PROJECT_GUID##.Debug|Win32.ActiveCfg = Debug|Win32
 		##WIN_CFG_PROJECT_GUID##.Debug|Win32.Build.0 = Debug|Win32
@@ -161,6 +175,7 @@ Global
 		##WIN_MSG_PROJECT_GUID## = ##WIN_COMN_GUID##
 		##WIN_SYM_PROJECT_GUID## = ##WIN_COMN_GUID##
 		##WIN_MOD_PROJECT_GUID## = ##WIN_MOD_GUID##
+		##WIN_TEST_PROJECT_GUID## = ##WIN_MOD_GUID##
 		##WIN_CFG_PROJECT_GUID## = ##WIN_CFG_GUID##
 		##WIN_INT_C_GUID## = ##WIN_INT_GUID##
 		##WIN_INT_LANG_GUID## = ##WIN_INT_GUID##
