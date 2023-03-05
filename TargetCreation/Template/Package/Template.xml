@@ -114,46 +114,6 @@
       <Description>The id of the package interface test folder used in the Windows sln file of msbuild.</Description>
     </MacroDefinition>
     <MacroDefinition>
-      <Name>LNX_CFG_GUID</Name>
-      <Type>SysGuid</Type>
-      <Description>The id of the package configuration folder used in the Linux sln file of msbuild.</Description>
-    </MacroDefinition>
-    <MacroDefinition>
-      <Name>LNX_CFG_PROJECT_GUID</Name>
-      <Type>SysGuid</Type>
-      <Description>The id of the package configuration project used in the Linux vcxproj and sln files of msbuild.</Description>
-    </MacroDefinition>
-    <MacroDefinition>
-      <Name>LNX_COLL_GUID</Name>
-      <Type>SysGuid</Type>
-      <Description>The id of the package organelle collection folder used in the Linux sln file of msbuild.</Description>
-    </MacroDefinition>
-    <MacroDefinition>
-      <Name>LNX_COLL_PROJECT_GUID</Name>
-      <Type>SysGuid</Type>
-      <Description>The id of the package collection project used in the Linux vcxproj and sln files of msbuild.</Description>
-    </MacroDefinition>
-    <MacroDefinition>
-      <Name>LNX_COMN_GUID</Name>
-      <Type>SysGuid</Type>
-      <Description>The id of the package organelle common folder used in the Linux sln file of msbuild.</Description>
-    </MacroDefinition>
-    <MacroDefinition>
-      <Name>LNX_MSG_PROJECT_GUID</Name>
-      <Type>SysGuid</Type>
-      <Description>The id of the package message project used in the Linux vcxproj and sln files of msbuild.</Description>
-    </MacroDefinition>
-    <MacroDefinition>
-      <Name>LNX_SYM_PROJECT_GUID</Name>
-      <Type>SysGuid</Type>
-      <Description>The id of the package symbiosis project used in the Linux vcxproj and sln files of msbuild.</Description>
-    </MacroDefinition>
-    <MacroDefinition>
-      <Name>LNX_MOD_GUID</Name>
-      <Type>SysGuid</Type>
-      <Description>The id of the package module folder used in the Linux sln file of msbuild.</Description>
-    </MacroDefinition>
-    <MacroDefinition>
       <Name>LNX_MOD_PROJECT_GUID</Name>
       <Type>SysGuid</Type>
       <Description>The id of the package module project used in the Linux vcxproj and sln files of msbuild.</Description>
