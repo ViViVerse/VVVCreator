@@ -32,9 +32,9 @@ namespace VVV
 {
     //public class FamilyX
     //{
-    //    public delegate void DualSlopeDeliveryDelegate(double crossSlope, double longSlope);
+    //    public delegate void XDeliveryDelegate(double X);
 
-    //    [DllImport("##PACKAGE_NAME##_c_direct_dll.dll", EntryPoint = "family_x__subscribe_to_x_metabolic")]
-    //    public static extern IntPtr SubscribeToXMetabolic(IntPtr vivid, IntPtr family, uint updatePeriod, XDeliveryDelegate deliveryFunc);
-    //}  //  class FamilyX
-}  //  namespace VVV
+    //    [DllImport("vvv_##PACKAGE_NAME##_c_direct_dll.dll", EntryPoint = "family_x__subscribe_to_x_metabolic")]
+    //    public static extern MbSub SubscribeToXMetabolic(Vivid vivid, Family family, uint UpdatePeriod, XDeliveryDelegate DeliveryFunc);
+    //} // class FamilyX
+} // namespace VVV
