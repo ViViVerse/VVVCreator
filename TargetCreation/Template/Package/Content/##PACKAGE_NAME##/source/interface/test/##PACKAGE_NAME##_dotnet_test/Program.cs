@@ -9,10 +9,10 @@
  *  Tests the ViViVerse interface provided by vvv_dotnet.
  * ------------------------------------------------------------------------------------------------------------------------------------------------------------
  * Created:
- *  2017-07-14
+ *  ##DATE##
  * ------------------------------------------------------------------------------------------------------------------------------------------------------------
  * Copyright (c):
- *  ViViVerse GmbH  
+ *  ##COPYRIGHT##
  *
  **************************************************************************************************************************************************************
  **************************************************************************************************************************************************************
@@ -21,6 +21,7 @@
 
 
 using System;
+using System.Runtime.InteropServices;
 
 
 
@@ -28,43 +29,47 @@ namespace vvv_dotnet_test
 {
     class Program
     {
-        //  this function is called whenever the slope metabolic is delivered
-        private static void SlopeDisplay(double Slope)
+        /// <summary>
+        /// Called when an exception thrown by the VVV is deleted. This function is also called for each peer and inner exception.
+        /// </summary>
+        /// <param name="message">The error message related to the exception.</param>
+        /// <param name="param">The custom parameter provided at the call of SetExceptionHook. Could be a pointer to an object.</param>
+        private static void exceptionDisplay([MarshalAs(UnmanagedType.LPWStr)] string message, IntPtr param)
         {
-            Console.WriteLine("Slope: " + Slope.ToString() + "rad");
-        }  //  SlopeDisplay
+            Console.WriteLine(message);
+        } // exceptionDisplay
+
+        /// <summary>
+        /// Called whenever the slope metabolic is delivered.
+        /// </summary>
+        /// <param name="param">The custom parameter provided at the subscription. Could be a pointer to an object. Not used.</param>
+        /// <param name="Slope">The slope value.</param>
+        private static void slopeDisplay(double slope, IntPtr param)
+        {
+            Console.WriteLine("Slope: " + slope.ToString() + "rad");
+        } // slopeDisplay
 
         static void Main(string[] args)
         {
-            //  synthesise the vivid. the dna file path is relative to the configuration folder
-            VVV.Vivid vivid = VVV.BaseInterface.SynthesiseVivid("vvv_base\\experiment\\vvv_simulators\\vvv_simulators.vvvdna");
+            // Should the VVV throw exceptions, display them in the console.
+            VVV.ExceptionDelegate exDel = new VVV.ExceptionDelegate(exceptionDisplay);
+            VVV.BaseInterface.SetExceptionHook(exDel, IntPtr.Zero);
 
-            //  search for a slope sensor
-            VVV.HoloTaxon hota = new VVV.HoloTaxon("SlopeSensor");
-            IntPtr queryResult;
-            UIntPtr donorCount = VVV.BaseInterface.SearchForDonors(vivid, ref hota, VVV.DonorQueryFlags.AllDerived, out queryResult);
-
-            //  if a slope sensor can be found, get the SlopeSensor family from it
-            VVV.Donor donor;
-            VVV.Family family;
-            if (donorCount.ToUInt32() >= 1 &&
-                VVV.BaseInterface.GetDonorInfo(vivid, queryResult, 0, out donor) &&
-                (family = VVV.BaseInterface.GetFamily(vivid, donor.Don, donor.Hota.Family)).IsValid())
+            // Synthesise the vivid. the dna file path is relative to the configuration folder.
+            using (VVV.Vivid vivid = new VVV.Vivid("vvv_base\\experiment\\vvv_simulators\\vvv_simulators.vvvdna"))
             {
-                //  subscribe for the slope metabolic. we need a delegate for this
-                //VVV.FamilySlopeSensor.SlopeDeliveryDelegate SlopeDel = new VVV.FamilySlopeSensor.SlopeDeliveryDelegate(SlopeDisplay);
-                //IntPtr sub = VVV.FamilySlopeSensor.SubscribeForSlopeMetabolic(Vivid, Family, VVV.BaseInterface.DeliverOnChangeSync, SlopeDel);
+                // Get the slope sensor (actually: the simulator).
+                VVV.HoloTaxon hota = new VVV.HoloTaxon("SlopeSensor");
+                using (VVV.SlopeSensor slopeSensor = new VVV.SlopeSensor(vivid, ref hota, VVV.DonorQueryFlags.AllDerived))
+                {
+                    // Subscribe to the slope metabolic. We need a delegate for this.
+                    VVV.SlopeSensor.SlopeDeliveryDelegate slopeDel = new VVV.SlopeSensor.SlopeDeliveryDelegate(slopeDisplay);
+                    slopeSensor.SubscribeToSlopeMetabolic(VVV.BaseInterface.DeliverOnChangeSync, slopeDel, IntPtr.Zero);
 
-                //  wait until the user hits a key. during this time, the delegate is called and will write the slope value to the console
-                System.Console.ReadKey();
-                //System.Threading.Thread.Sleep(5000);
-
-                //  unsubscribe from the metabolic
-                //VVV.BaseInterface.UnsubscribeFromMetabolic(vivid, sub);
-            }  //  if (donorCount.ToUInt32() >= 1
-
-            //  dissolve the vivid
-            bool dissolved = VVV.BaseInterface.DissolveVivid(vivid);
-        }  //  Main
+                    // Wait until the user hits a key. During this time, the delegate is called and will write the slope value to the console.
+                    System.Console.ReadKey();
+                } // using (VVV.SlopeSensor
+            } // using (VVV.Vivid vivid
+        } // Main
     }  //  class Program
 }  //  namespace vvv_dotnet_test
