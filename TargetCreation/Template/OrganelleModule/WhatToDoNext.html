@@ -10,18 +10,79 @@
     <div><img src="../VVVLogo.png" style="width:240px" /></div>
     <h2>You have successfully created a new ViViVerse organelle module!</h2>
     <div>
-        A project folder with all required files has been created. This is what you have to do now:
+        A project folder with all required files has been created. This is what you have to do now:<br />
+        <h4>Windows (MSBuild)</h4>
         <ol>
             <li>
-                Add the MSBuild project to the package solution - once for Windows and once for Linux.
+                Add the MSBuild project to the package solution (Organelle/Module).
+            </li><br />
+            <li>
+                For organelles from the same package:
+                <ol type="a">
+                    <li>
+                       Add references to the organelle collection and the symbiosis library to the project. If other common libraries are needed, add them too.
+                    </li>
+                    <li>
+                        Add references to the information structures of the organelles you want to have in the module to the .cpp file. The .cpp file comes with an example.
+                    </li>
+                    <li>
+                       If the organelles have faces, add the related .res files to the link command. The .res files can be found in the software/library folder and have the same names as the organelles with vvv_ in front.
+                    </li>
+                </ol>
+            </li><br />
+            <li>
+                If you want to use organelles from other packages:
+                <ol type="a">
+                    <li>
+                        Add the organelle library and symbiosis library headers of the package to the pch.h file. Use paths relative to the software/package folder. If other common libraries of the package are needed, add them as well.
+                    </li>
+                    <li>
+                        To the .cpp file, add references to the information structures of the organelles you want to have in the module. The .cpp file comes with an example.
+                    </li>
+                    <li>
+                        Add the collection and symbiosis libraries of the organelles to the link command.
+                    </li>
+                    <li>
+                        If the organelles have faces, add the related .res files to the link command. The .res files can be found in the software/library folder and have the same names as the organelles with vvv_ in front.
+                    </li>
+                </ol>
             </li>
-            <br />
+        </ol>
+
+        <h4>Linux, Android, Windows (CMake)</h4>
+        <ol>
             <li>
                 Add the module folder to the CMakeLists.txt file of the package.
+            </li><br />
+            <li>
+                For organelles from the same package:
+                <ol type="a">
+                    <li>
+                        To the .cpp file, add references to the information structures of the organelles you want to have in the module. The .cpp file comes with an example.
+                    </li>
+                    <li>
+                        Windows only: if the organelles have faces, add the related .res files to the link command. The .res files can be found in the software/library folder and have the same names as the organelles with vvv_ in front.
+                    </li>
+                </ol>
+            </li><br />
+            <li>
+                If you want to use organelles from other packages:
+                <ol type="a">
+                    <li>
+                        Add the organelle library and symbiosis library headers of the package to the pch.h file. Use paths relative to the software/package folder. If other common libraries of the package are needed, add them as well.
+                    </li>
+                    <li>
+                        Add references to the information structures of the organelles you want to have in the module to the .cpp file. The .cpp file comes with an example.
+                    </li>
+                    <li>
+                        Add the collection and symbiosis libraries of the organelles to the link command.
+                    </li>
+                    <li>
+                        Windows only: if the organelles have faces, add the related .res files to the link command. The .res files can be found in the software/library folder and have the same names as the organelles with vvv_ in front.
+                    </li>
+                </ol>
             </li>
-            <br />
         </ol>
-        <p>After this, you can build the the package.</p>
     </div>
 </body>
 </html>

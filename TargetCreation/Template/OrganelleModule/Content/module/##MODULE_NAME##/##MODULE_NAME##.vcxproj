@@ -67,6 +67,17 @@
     </ClCompile>
     <ClCompile Include="source\##MODULE_NAME##.cpp" />
   </ItemGroup>
+  <ItemDefinitionGroup>
+    <!--Add the include directories for the organelle collections and common libraries in other packages.-->
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VVV_PackageDir)vvv_base\source\organelle\common\include;$(VVV_PackageDir)vvv_base\source\organelle\collection\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <!--Add organelle collections, common and symbiosis libraries and compiled resource files for the faces.-->
+    <Link>
+      <AdditionalDependencies>vvv_base.lib;vvv_base_symbiosis.lib;vvv_mathematics.lib;vvv_visual_w32.lib;vvv_face_w32.lib;Synchronization.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(PYLON_DEV_DIR)lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
   <!--Add references to the organelle collections and the symbiosis project in the same package (not other packages)-->
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

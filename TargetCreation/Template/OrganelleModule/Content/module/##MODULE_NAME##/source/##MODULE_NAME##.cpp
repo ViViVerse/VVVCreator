@@ -42,7 +42,7 @@
 
 using namespace vvv;
 using namespace vvvpkg;
-using namespace vvv_##PACKAGE_NAME##;
+using namespace vvv_##UND_PACKAGE_NAME##;
 
 
 

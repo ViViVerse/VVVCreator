@@ -6,12 +6,22 @@
   <MacroDefinition>
     <Name>PACKAGE_NAME</Name>
     <Type>UserString</Type>
-    <Description>The name of the package which contains the organelle module. Must not contain whitespace.</Description>
+    <Description>The name of the package. Must not contain whitespace.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>UND_PACKAGE_NAME</Name>
+    <Type>UserString</Type>
+    <Description>The name of the package without prefix like 'vvv_'. Must not contain whitespace.</Description>
   </MacroDefinition>
   <MacroDefinition>
     <Name>MODULE_NAME</Name>
     <Type>UserString</Type>
     <Description>The name of the organelle module. Must not contain whitespace.</Description>
+  </MacroDefinition>
+  <MacroDefinition>
+    <Name>UND_MODULE_NAME</Name>
+    <Type>UserString</Type>
+    <Description>The name of the organelle module without prefix like vvv_. Must not contain whitespace.</Description>
   </MacroDefinition>
   <MacroDefinition>
     <Name>COPYRIGHT</Name>

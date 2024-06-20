@@ -51,5 +51,5 @@ set_target_properties(##PACKAGE_NAME##_symbiosis PROPERTIES ARCHIVE_OUTPUT_DIREC
 
 
 
-target_compile_definitions(##PACKAGE_NAME##_symbiosis PRIVATE _VVV_BASE_SYMBIOSIS_LIB_BUILD)
+target_compile_definitions(##PACKAGE_NAME##_symbiosis PRIVATE _##uc(PACKAGE_NAME##_SYMBIOSIS_LIB_BUILD)
 target_compile_options(##PACKAGE_NAME##_symbiosis PRIVATE ${VVV_AllCompilerFlags})

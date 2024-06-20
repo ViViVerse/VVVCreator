@@ -56,20 +56,20 @@ namespace vvv_dotnet_test
             VVV.BaseInterface.SetExceptionHook(exDel, IntPtr.Zero);
 
             // Synthesise the vivid. the dna file path is relative to the configuration folder.
-            using (VVV.Vivid vivid = new VVV.Vivid("vvv_base\\experiment\\vvv_simulators\\vvv_simulators.vvvdna"))
-            {
-                // Get the slope sensor (actually: the simulator).
-                VVV.HoloTaxon hota = new VVV.HoloTaxon("SlopeSensor");
-                using (VVV.SlopeSensor slopeSensor = new VVV.SlopeSensor(vivid, ref hota, VVV.DonorQueryFlags.AllDerived))
-                {
-                    // Subscribe to the slope metabolic. We need a delegate for this.
-                    VVV.SlopeSensor.SlopeDeliveryDelegate slopeDel = new VVV.SlopeSensor.SlopeDeliveryDelegate(slopeDisplay);
-                    slopeSensor.SubscribeToSlopeMetabolic(VVV.BaseInterface.DeliverOnChangeSync, slopeDel, IntPtr.Zero);
+            //using (VVV.Vivid vivid = new VVV.Vivid("vvv_base\\experiment\\vvv_simulators\\vvv_simulators.vvvdna"))
+            //{
+            //    // Get the slope sensor (actually: the simulator).
+            //    VVV.HoloTaxon hota = new VVV.HoloTaxon("SlopeSensor");
+            //    using (VVV.SlopeSensor slopeSensor = new VVV.SlopeSensor(vivid, ref hota, VVV.DonorQueryFlags.AllDerived))
+            //    {
+            //        // Subscribe to the slope metabolic. We need a delegate for this.
+            //        VVV.SlopeSensor.SlopeDeliveryDelegate slopeDel = new VVV.SlopeSensor.SlopeDeliveryDelegate(slopeDisplay);
+            //        slopeSensor.SubscribeToSlopeMetabolic(VVV.BaseInterface.DeliverOnChangeSync, slopeDel, IntPtr.Zero);
 
-                    // Wait until the user hits a key. During this time, the delegate is called and will write the slope value to the console.
-                    System.Console.ReadKey();
-                } // using (VVV.SlopeSensor
-            } // using (VVV.Vivid vivid
+            //        // Wait until the user hits a key. During this time, the delegate is called and will write the slope value to the console.
+            //        System.Console.ReadKey();
+            //    } // using (VVV.SlopeSensor
+            //} // using (VVV.Vivid vivid
         } // Main
     }  //  class Program
 }  //  namespace vvv_dotnet_test
