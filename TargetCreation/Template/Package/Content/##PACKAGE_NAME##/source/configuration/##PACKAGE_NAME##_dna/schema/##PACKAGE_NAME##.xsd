@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--This group can be used wherever organelles must be defined-->
+  <xs:group name="##uc(PACKAGE_NAME##">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>

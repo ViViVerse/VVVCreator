@@ -1,0 +1,33 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Configuration/">
+    <Project Path="source/configuration/##PACKAGE_NAME##_dna/##PACKAGE_NAME##_dna.vcxproj" />
+  </Folder>
+  <Folder Name="/Interface/" />
+  <Folder Name="/Interface/C/">
+    <Project Path="source/interface/c/##PACKAGE_NAME##_c_direct_dll/##PACKAGE_NAME##_c_direct_dll.vcxproj" />
+    <Project Path="source/interface/c/##PACKAGE_NAME##_c_direct_static/##PACKAGE_NAME##_c_direct_static.vcxproj" />
+  </Folder>
+  <Folder Name="/Interface/Language/">
+    <Project Path="source/interface/language/##PACKAGE_NAME##_dotnet/##PACKAGE_NAME##_dotnet.shproj" />
+  </Folder>
+  <Folder Name="/Interface/Test/">
+    <Project Path="source/interface/test/##PACKAGE_NAME##_dotnet_test/##PACKAGE_NAME##_dotnet_test.csproj" />
+  </Folder>
+  <Folder Name="/Organelle/" />
+  <Folder Name="/Organelle/Collection/">
+    <Project Path="source/organelle/collection/##PACKAGE_NAME##/##PACKAGE_NAME##.vcxproj" />
+  </Folder>
+  <Folder Name="/Organelle/Common/">
+    <Project Path="source/organelle/common/##PACKAGE_NAME##_message/##PACKAGE_NAME##_message.vcxproj" />
+    <Project Path="source/organelle/common/##PACKAGE_NAME##_symbiosis/##PACKAGE_NAME##_symbiosis.vcxproj" />
+  </Folder>
+  <Folder Name="/Organelle/Module/">
+    <Project Path="source/organelle/module/##PACKAGE_NAME##/##PACKAGE_NAME##.vcxproj" />
+    <Project Path="source/organelle/module/##PACKAGE_NAME##_test/##PACKAGE_NAME##_test.vcxproj" />
+  </Folder>
+</Solution>

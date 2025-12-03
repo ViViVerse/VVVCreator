@@ -16,4 +16,9 @@
       <Filter>Configuration Files</Filter>
     </VVVDna>
   </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="schema\##PACKAGE_NAME##.xsd">
+      <Filter>Schema Files</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
 </Project>

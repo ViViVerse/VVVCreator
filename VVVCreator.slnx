@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="TargetCreation/TargetCreation.csproj" />
+  <Project Path="VVVCreator/VVVCreator.csproj">
+    <BuildDependency Project="TargetCreation/TargetCreation.csproj" />
+  </Project>
+  <Project Path="VVVCreatorConsole/VVVCreatorConsole.csproj" />
+</Solution>

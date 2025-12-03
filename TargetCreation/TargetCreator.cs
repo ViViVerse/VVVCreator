@@ -275,6 +275,7 @@ namespace TargetCreation
         /// <summary>
         /// If the given macro name contains a modifier, indicated by a '(' (like the opening parenthesis of a function),<br />
         /// the modfier is removed from the macro name. If the modifier is unknown an exception is thrown.
+        /// Example: ##uc(PACKAGE_NAME##
         /// </summary>
         /// <param name="macroName">On entry, this contains the macro name and maybe a modifier. On exit, the modifier will have been removed.</param>
         /// <returns>The modifier type.</returns>

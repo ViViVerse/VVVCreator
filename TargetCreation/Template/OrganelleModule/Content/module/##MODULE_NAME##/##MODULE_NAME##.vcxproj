@@ -36,7 +36,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup>
     <VVV_PropertyDir Condition="exists('$(SolutionDir)software\framework\vvv_framework\source\property')">$(SolutionDir)software\framework\vvv_framework\source\property\</VVV_PropertyDir>
